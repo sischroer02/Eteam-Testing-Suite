@@ -447,6 +447,38 @@
     [
       "056b0a7c-ceac-43f9-8147-bcba36b25f85",
       "EL1008"
+    ],
+    [
+      "7194bd09-97a2-4a15-b037-b174c55a776b",
+      "NS 1"
+    ],
+    [
+      "6ba4ae67-188b-4345-9e6d-55116cd4c5d5",
+      "EL1009"
+    ],
+    [
+      "5dcfb528-f9a8-4a0b-a117-e166ab24ba13",
+      "EL1010"
+    ],
+    [
+      "dc81181e-a7fb-4a6a-8bd5-1fa88c6ab4dd",
+      "120V LED 1"
+    ],
+    [
+      "15dd73a1-6ddb-470f-83d5-8d95f9b57b08",
+      "AMCAM1"
+    ],
+    [
+      "510ba3df-b8f9-47ce-be7d-b1571d410709",
+      "AMCAM2"
+    ],
+    [
+      "8c59ebef-6e7a-4e20-896b-979f276b685e",
+      "AMCAM3"
+    ],
+    [
+      "4261ae27-7a0e-4a91-81b1-0c59d8d12b29",
+      "AMCAM5"
     ]
   ],
   "text_variables": {}

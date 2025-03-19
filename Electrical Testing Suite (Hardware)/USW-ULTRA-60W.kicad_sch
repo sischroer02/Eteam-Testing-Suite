@@ -1,0 +1,96 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "63445bd7-c15a-4632-923d-36b3ecd782fb")
+	(paper "A4")
+	(lib_symbols)
+	(hierarchical_label "SW2"
+		(shape input)
+		(at 57.15 77.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2156695f-abbd-4350-99ac-34411a0e37f3")
+	)
+	(hierarchical_label "SW3"
+		(shape input)
+		(at 57.15 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "39e8682e-b542-48b5-9f50-bb51856fec9c")
+	)
+	(hierarchical_label "SW4"
+		(shape input)
+		(at 57.15 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "58853ef2-269b-4611-88ef-c01f6a1d4490")
+	)
+	(hierarchical_label "SW7"
+		(shape input)
+		(at 55.88 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6e254e77-3bc3-4b12-8e2c-0eef37940f01")
+	)
+	(hierarchical_label "SW5"
+		(shape input)
+		(at 57.15 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "832a846e-2e8d-44d3-b2de-79b66804c61a")
+	)
+	(hierarchical_label "SW1"
+		(shape input)
+		(at 57.15 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c4355d1d-ce8e-4c19-9067-542d774213cb")
+	)
+	(hierarchical_label "SW6"
+		(shape input)
+		(at 55.88 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f09635dd-a5f3-41cd-aade-dac565f76df9")
+	)
+	(hierarchical_label "SW In"
+		(shape input)
+		(at 55.88 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f73111c0-867a-4b87-a45b-7769d87d27d9")
+	)
+)
