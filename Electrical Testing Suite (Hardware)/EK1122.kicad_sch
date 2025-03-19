@@ -1,0 +1,30 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "621ce1b9-7615-49a2-a6e9-b7fa03f797f3")
+	(paper "A4")
+	(lib_symbols)
+	(hierarchical_label "X1"
+		(shape bidirectional)
+		(at 25.4 45.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9bcdca95-ccb8-4570-954d-f75500ae464d")
+	)
+	(hierarchical_label "X2"
+		(shape bidirectional)
+		(at 25.4 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "aa3e590d-552e-4b7f-9c1a-699bb7742427")
+	)
+)
