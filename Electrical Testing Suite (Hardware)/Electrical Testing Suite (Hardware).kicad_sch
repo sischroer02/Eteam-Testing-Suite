@@ -2003,6 +2003,18 @@
 		)
 	)
 	(rectangle
+		(start 36.83 132.08)
+		(end 39.37 137.16)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 6a9dddf1-b22e-470d-99ac-f8ce36988cd7)
+	)
+	(rectangle
 		(start 114.3 162.56)
 		(end 114.3 162.56)
 		(stroke
@@ -2049,18 +2061,6 @@
 			(type none)
 		)
 		(uuid c9cf73f8-bb85-41da-84af-fefc9596a71b)
-	)
-	(rectangle
-		(start 35.56 153.67)
-		(end 38.1 158.75)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid d7d70260-8a12-4ff0-b3a1-d1ba85a4eb1d)
 	)
 	(text "120V\n"
 		(exclude_from_sim no)
@@ -3093,16 +3093,6 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 156.21) (xy 58.42 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "37b1b910-c973-497c-bfa0-57b280ae31c9")
-	)
-	(wire
-		(pts
 			(xy 185.42 224.79) (xy 186.69 224.79)
 		)
 		(stroke
@@ -3940,6 +3930,16 @@
 			(type default)
 		)
 		(uuid "80e71c8e-2263-40e9-90d1-35c0c35d1a87")
+	)
+	(wire
+		(pts
+			(xy 38.1 134.62) (xy 59.69 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81c0a170-2a32-4e74-9d8c-f53521e96e93")
 	)
 	(wire
 		(pts
@@ -5631,6 +5631,16 @@
 		)
 		(uuid "2665734b-7fd8-4078-89c1-75f4350463e4")
 	)
+	(label "EC MAIN In"
+		(at 59.69 134.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "26a8dbf0-64a6-42de-8e8c-ef21b72d2361")
+	)
 	(label "S3 (2)"
 		(at 129.54 201.93 0)
 		(effects
@@ -6500,16 +6510,6 @@
 			(justify left bottom)
 		)
 		(uuid "bcb361bb-de9d-483f-8521-ec9493fddb8f")
-	)
-	(label "EC MAIN In"
-		(at 58.42 156.21 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c15b706f-58df-4eb2-93de-9f30f36cdd25")
 	)
 	(label "J3 (3)"
 		(at 363.22 414.02 0)
