@@ -50,7 +50,6 @@ VAR
     mine_phone_battery_manual: BOOL; (* mine phone battery manual, Unknown Port *)
     ping_ips: BOOL; (* ping ips, Unknown Port *)
     gfci_test_manual: BOOL; (* gfci test manual, Unknown Port *)
-END_VAR
 
 
     TestingStage   : INT := 0;
@@ -64,10 +63,20 @@ END_VAR
     // Internal helpers
     LogIndex       : INT := 0;
 
+    Section1 : FB_Execute_Section_1;
+    TestInProgress : BOOL;
+
 END_VAR
 
 
 // Main program
+
+// Variable	Purpose
+// StartTest	External trigger to begin
+// Done	Goes TRUE when test finishes
+// Result	TRUE = pass, FALSE = fail
+// state	Local step tracking inside FB
+// TON	Timer used for delays
 
 
 // Advance only on rising edge of AdvanceStep
@@ -75,30 +84,28 @@ IF AdvanceStep AND StepReady THEN
     CASE TestingStage OF
 
         0:
-            LogStep[LogIndex] := 'section 1'
-            LogValue[LogIndex] := Door_Switch;
+            Section1(StartTest := TRUE,
+                     Input1 := SF1,
+                     Input2 := SF2,
+                     Input3 := SF6,
+                     Input4 := SF8);
+
+            IF Section1.Done THEN
+                LogStep[LogIndex] := 'section 1'
+                LogValue[LogIndex] := Section1.Result;
+                LogIndex := LogIndex + 1;
+                TestingStage := 1;
+            END_IF;
+
+        ELSE
+            // End of test
+            TestingStage := 0;
+            LogIndex := 0;
+            LogStep[LogIndex] := 'Test Complete';
+            LogValue[LogIndex] := TRUE;
             LogIndex := LogIndex + 1;
-            TestingStage := 1;
-        1:
-            LogStep[LogIndex] := 'section 2'
-            LogValue[LogIndex] := Estop_Signal;
-            LogIndex := LogIndex + 1;
-            TestingStage := 2;
-        2:     
-            LogStep[LogIndex] := 'section 3'
-            LogValue[LogIndex] := DCDC_Signal;
-            LogIndex := LogIndex + 1;
-            TestingStage := 3;      
-        3:  
-            LogStep[LogIndex] := 'section 4'
-            LogValue[LogIndex] := Estop_Signal_Low;
-            LogIndex := LogIndex + 1;
-            TestingStage := 4;
-        4:
-            LogStep[LogIndex] := 'section 5'
-            LogValue[LogIndex] := DCDC_Signal_Low;
-            LogIndex := LogIndex + 1;
-            TestingStage := 5;
+            TestingStage := 0;
+            //
 
         END_CASE;
 
@@ -110,6 +117,32 @@ IF AdvanceStep AND StepReady THEN
     END_IF
 
 
+// This is where I call the test logger program to create the test log
 
+// VAR
+//     TestLogger : FB_TestLogger;
+//     AdvanceStep : BOOL;
+//     ManualTrigger : BOOL;
+// END_VAR
 
+// Call it like this:
 
+// pascal
+// Copy
+// Edit
+// // During test step
+// IF AdvanceStep THEN
+//     TestLogger.StepDescription := 'Power Input 1 good';
+//     TestLogger.StepResult := TRUE;
+//     TestLogger.AddStep := TRUE;
+// ELSE
+//     TestLogger.AddStep := FALSE;
+// END_IF
+
+// // Trigger saving the log
+// TestLogger.WriteLogToFile := ManualTrigger;
+
+// // Optionally print it to logger
+// TestLogger.PrintToLogger := FALSE; // or TRUE on demand
+
+// TestLogger();
