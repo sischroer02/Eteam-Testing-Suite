@@ -1427,12 +1427,30 @@
 			"alJBZ0prWnpzL1B5c3RJMWdUS3d1bHBQYmExWE1aZzQxNGpDTkNGVUZRbWw3dGpZWHQyNlMwWWpj"
 			"UEQ1NjFhdVdHRlZMSlJ6bldGb2NadDI3TnIxMmJ4NTI3WnZkY2JHdlAvQkI0aENZcUR4eHRvNTRl"
 			"S0xCZzRjQ0tZK2YvL1hIZS9QVzl6dHZBZW1uZHV6Y2ZLTXN2UXhOOXc4ZFVIbkNlZWVsUTZyMVdM"
-			"TnlteU9VYzgwTFZ4UVdIRA=="
+			"TnlteU9VYzgwTFZ4UVdIRENyQlZsV0k0TFlvS2Q3RTkrS05HUDAyRUVPdTlUWE5FNVdTODd1TGJ6"
+			"a3BDc0IwRHdXb1hGeGNucCtmUG5uMzRNcjJFVU1LcWJoVFlXQVZ2d2pTV2poQ0hRVGZLYXF4bUZS"
+			"ZS9xV3dTNlZhRjc5KzZkK1p5NXd0OXZmYlRiUE85a2lmMFBCWUJvUE12S2NuR2k5M2wxVVorZHRK"
+			"R1NWeHNyTCtwQmlCVnNrSUxhR0xFNXV3QUFnRjZKeDNRQ2dFQkJzaDZBUHVqbjV6WUpyeWo4cmR1"
+			"YU1XUEhWbFpVQ0dkM1FvTVJNUmxaV1RLSlZGMVZMZXF4aUIyRjRRbzR6c0h4WmdqVUF5RCtsRWVN"
+			"S0N3c09IN2lSTjlXRjk1MHdxeXNUSCthTHB4OUNka0lsUkh2eXQrSmVoUmlTa1ZWdGZ6dFcxR1BB"
+			"Z0R3anhoUE1xWW85ZkUyWHVGTkp3QUFBQVl3VWQ5M0FnQUFZRUNBNlFRQUFJQUF3SFFDQUFCQUFH"
+			"QTZBUUFBSUFBd25RQUFBQkNBZ1hZYkk0N2paV1Zsb2g0RkFBQklKRlZWVldscDZiNnRPOUNtazhM"
+			"Q3d2bno1NHQ2RkFBQUlKR2lvNk5OVEV6NnRpN2Nkd0lBQUVBQTROb0pBQUFBQVlEcEJBQUFnQUI4"
+			"QnRNSm45UEFxc083KzBUWDNsYkdHeHI3dXE1SVNlekFBUUFTYWtCUEo5elMrSkJWRmtiakRTZE9u"
+			"R2o0MVpxRFNlLysxZXNycnpobW5hbVJ2cjZobWUvWklOdHBzM2NLYkdETkNUNXpKMXY3cCtBZHY4"
+			"aEpQMmd6Mlh6SDNmNXZubGNjdldIV0JNUHhCdlAycEhTL0ZDYzlSQkJQQ2k5OStOUDV4M1g5M1F3"
+			"QVFOSU50TC9zNmdEUE9MUjIwMUhHV051TmZ0TVZTdU9pZm9ydzhGV0xPK2FnOGsrbjBNWS83OXg3"
+			"cTBnN2NHemo5Q0VsLzZzWktzRFBzZWMwVkZmWE5PQ2R2OWpTVUZ0ZDNjRHAvOWJaVDI3ZmU2dG9H"
+			"M0o4L1N5dDdwY2lqcGhrU3gvY3p5ZkZmWFY4M2VvakNqNjI5R2tEKzFjVEFFQnZ4UEVsb0xhMjFz"
+			"L1B6L0liaXptelRaY3ZXNWFVbE5TWHJiQ1RMdnlhUzVqcUVSbTZpZTZ3Wk92UmtLMnVpeVlwNHEw"
+			"SU5iMjY0dXRvYXFpcHFUL1pldlBwREJZZklVNTZ1Tk5YTGp1Q3RscVo2R2thbUx1ZGVzSEtpSEFM"
+			"ZWNMaFZ5VWU4djcxVmZXTFAyTGowaEJDL1BLN1FZN1REVFQxWnRGOWRxMHkvMlo3SE9La2hpMDJ0"
+			"dzlNeGhIaXBJWFJ6YXdEaw=="
 		)
 	)
-	(hierarchical_label "0V Out"
+	(hierarchical_label "5"
 		(shape output)
-		(at 19.05 60.96 0)
+		(at 85.09 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1441,9 +1459,9 @@
 		)
 		(uuid "094e3882-b9bd-4267-8fe4-d6ec0b869a62")
 	)
-	(hierarchical_label "24V Out1"
+	(hierarchical_label "4"
 		(shape output)
-		(at 19.05 55.88 0)
+		(at 77.47 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1452,9 +1470,9 @@
 		)
 		(uuid "32e1c44d-2273-4246-88ef-9f7c1fb34e75")
 	)
-	(hierarchical_label "24V Out"
+	(hierarchical_label "3"
 		(shape output)
-		(at 19.05 50.8 0)
+		(at 77.47 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1463,9 +1481,9 @@
 		)
 		(uuid "42604223-031e-4798-83a8-4b82cc1440fd")
 	)
-	(hierarchical_label "PE1"
+	(hierarchical_label "8"
 		(shape output)
-		(at 19.05 76.2 0)
+		(at 85.09 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1474,9 +1492,9 @@
 		)
 		(uuid "8495bd86-f6f2-419e-8bf9-173d6ccfada6")
 	)
-	(hierarchical_label "PE"
+	(hierarchical_label "7"
 		(shape output)
-		(at 19.05 71.12 0)
+		(at 85.09 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1485,9 +1503,9 @@
 		)
 		(uuid "aec9ffca-0779-4017-93be-5037e8e0ae14")
 	)
-	(hierarchical_label "0V Out1"
+	(hierarchical_label "6"
 		(shape output)
-		(at 19.05 66.04 0)
+		(at 85.09 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1496,9 +1514,9 @@
 		)
 		(uuid "ce485401-a5d2-487a-8a3d-f35867707e34")
 	)
-	(hierarchical_label "24V In"
+	(hierarchical_label "1"
 		(shape output)
-		(at 19.05 34.29 0)
+		(at 77.47 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1507,9 +1525,9 @@
 		)
 		(uuid "eb4c9982-3da3-4571-bc34-7332f6c8b54c")
 	)
-	(hierarchical_label "0V In"
+	(hierarchical_label "2"
 		(shape output)
-		(at 19.05 39.37 0)
+		(at 77.47 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)

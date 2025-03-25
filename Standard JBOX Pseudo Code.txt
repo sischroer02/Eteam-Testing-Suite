@@ -1,0 +1,180 @@
+Variables:
+
+Mine Phone Continuity SF1 (1008 (2) port 8)
+Mine Phone Continuity SF2 (1008 (2) port 7)
+
+MGT Continuity SF6 (1008 (3) port 1)
+MGT Continuity SF8 (1008 (3) port 2)
+
+Fire pull Station SF4 (1008 (1) port 1)
+Fire Alarm Sound SF5 (2024 port 2)
+
+Lighting 24V Check J1 (1) (1008 (3) port 3)
+Lighting 24V Check J1 (2) (1008 (3) port 4)
+
+Lighting 24V Check J2 (1) (1008 (3) port 5)
+Lighting 24V Check J2 (2) (1008 (3) port 6)
+
+24V PWR Check J3 (1) (1008 (1) port 4)
+24V PWR Check J3 (2) (1008 (1) port 5)
+
+24V PWR Check J4 (1) (1008 (1) port 6)
+24V PWR Check J4 (2) (1008 (1) port 7)
+
+24V PWR Check J5 (1) (1008 (2) port 1)
+24V PWR Check J5 (2) (1008 (2) port 2)
+
+24V PWR Check J6 (1) (1008 (2) port 3)
+24V PWR Check J6 (2) (1008 (2) port 4)
+
+24V PWR Check J7 (4) (1008 (1) port 2)
+24V PWR Check J7 (5) (1008 (1) port 3)
+
+24V PWR Check J8 (4) (1008 (2) port 5)
+24V PWR Check J8 (5) (1008 (2) port 6)
+
+
+    TestingStage   : INT := 0;
+    StepReady      : BOOL := TRUE;
+    AdvanceStep    : BOOL; // Could be a physical input or HMI button
+
+    // Logging arrays
+    LogStep        : ARRAY[0..39] OF STRING(50);
+    LogValue       : ARRAY[0..39] OF BOOL;
+
+    // Internal helpers
+    LogIndex       : INT := 0;
+
+End Variables
+
+
+I want to check if all of the following tests 
+pass and eventually print out a test log.
+
+I am going to create an array of log 
+messages and results to do this.
+
+array log step (string) = [door switch, 
+                    estop signa goes hil, 
+                    dcdc signal goes hil, 
+                    estop signal goes low,
+                    dcdc signal goes low,
+                    MANUAL TRIGGER FOR DCDC CALIBRATION,
+                    dcdc 2 signal goes hi,
+                    dcdc 2 signal goes low,
+                    psu 1 input good,
+                    psu 2 input good,
+                    psu 1 input goes bad when off,
+                    psu 2 input goes bad when off,
+                    24v check 1,
+                    24v check 2,
+                    24v check 3,
+                    24v check 4,
+                    24v check 5,
+                    24v check 6,
+                    safety check 1,
+                    safety check 2,
+                    safety check 3,
+                    safety check 4,
+                    manual input for hear fire alarm,
+                    ping address 1,
+                    ping address 2,
+                    ping address 3,
+                    ping address 4,
+                    grace port blinky lights,
+                    120v indicator,
+                    programmed psu1,
+                    programmed psu2,
+                    24v load on psu1,
+                    24v load on psu2,
+                    ecat branch test,
+                    ecat branch test,
+                    manual input for adjusted mine phone,
+                    ping more ips,
+                    manual input for gfci test,
+                    ]
+
+
+array log value (bool) = [, 
+                    0, 
+                    0, 
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    ]
+
+
+Testing Stage = 0
+stepready = true
+
+
+// Advance only on rising edge of AdvanceStep
+IF AdvanceStep AND StepReady THEN
+    CASE TestingStage OF
+
+        0:
+            LogStep[LogIndex] := 'door switch';
+            LogValue[LogIndex] := SF1;  // Replace with actual test condition
+            LogIndex := LogIndex + 1;
+            TestingStage := 1;
+
+        1:
+            LogStep[LogIndex] := 'estop signal goes hi';
+            LogValue[LogIndex] := SF2;  // Replace with actual test condition
+            LogIndex := LogIndex + 1;
+            TestingStage := 2;
+
+        2:
+            LogStep[LogIndex] := 'dcdc signal goes hi';
+            LogValue[LogIndex] := SF6;  // Replace with actual test condition
+            LogIndex := LogIndex + 1;
+            TestingStage := 3;
+
+        // More steps here...
+        
+        39:
+            LogStep[LogIndex] := 'manual input for gfci test';
+            LogValue[LogIndex] := TRUE; // or use an input like a confirm button
+            LogIndex := LogIndex + 1;
+            TestingStage := 40; // done
+    END_CASE;
+
+    StepReady := FALSE; // Lock step until AdvanceStep is released
+END_IF
+
+// Allow next step when button released
+IF NOT AdvanceStep THEN
+    StepReady := TRUE;
+END_IF
