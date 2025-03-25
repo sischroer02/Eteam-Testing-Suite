@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "981ef9bf-116b-4302-aed3-c618ad07e4a4")
+	(uuid "81dc9073-325e-4a8f-abd7-e583fa0f12a6")
 	(paper "A4")
 	(lib_symbols)
 	(hierarchical_label "GND"
