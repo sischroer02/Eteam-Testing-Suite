@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="MAIN" Id="{99ab54a4-34ac-447e-8e15-602a1f030758}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR_INPUT
+END_VAR
+VAR
+	Section1 : FB_Execute_Section_1;  // instance of your new FB
+	
+	TestLogger : FB_TestLogger; // instance of test logger FB
+	StartAllTests : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Section1(
+    StartTest := StartAllTests,
+    SF1_Continuity := GVL.SF1,
+    SF2_Continuity := GVL.SF2,
+	SF4_Continuity := GVL.SF4,
+	SF6_Continuity := GVL.SF6,
+	SF8_Continuity := GVL.SF8,
+	S33_Up := GVL.J1_1,
+	S33_Us := GVL.J1_2,
+	S34_Up := GVL.J2_1,
+	S34_Us := GVL.J2_2,
+	S25_Up := GVL.J3_1,
+	S25_Us := GVL.J3_2,
+	S26_Up := GVL.J4_1,
+	S26_Us := GVL.J4_2,
+	S27_Up := GVL.J5_1,
+	S27_Us := GVL.J5_2,
+	S28_Up := GVL.J6_1,
+	S28_Us := GVL.J6_2,
+	S29_Up := GVL.J7_4,
+	S29_Us := GVL.J7_5,
+	S30_Up := GVL.J8_4,
+	S30_Us := GVL.J8_5,
+	Door_Switch_Closed := GVL.Door_Switch,
+	EStop_Nominal := GVL.Estop_Signal,
+    Logger := TestLogger
+);
+
+(*
+IF Section1.Done THEN
+    // perhaps do next stage?
+    Section2(
+        StartTest := StartAllTests,
+        Input1    := SF6,
+        Input2    := SF8,
+        Logger    := TestLogger
+    );
+END_IF
+
+*)
+
+// Finally, handle log writing or printing
+IF bWriteLog THEN
+    TestLogger.WriteLogToFile := TRUE;
+END_IF
+TestLogger();  // calls the logger
+TestLogger.WriteLogToFile := FALSE; // reset]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

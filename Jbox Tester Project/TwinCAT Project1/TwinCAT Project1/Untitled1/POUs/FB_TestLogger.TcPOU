@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="FB_TestLogger" Id="{0051d978-509f-4b56-ae46-ffc1d27dfb15}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TestLogger
+VAR_INPUT
+    WriteLogToFile : BOOL;
+    PrintToLogger  : BOOL;
+END_VAR
+
+VAR_IN_OUT
+    // Possibly some reference to arrays, or file paths
+END_VAR
+
+VAR_OUTPUT
+    // Some status, maybe an error code
+END_VAR
+
+VAR
+    AddStep       : BOOL;
+    StepDescription : STRING(50);
+    StepResult    : BOOL;
+    // internal array or file handling
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+/// PSEUDOCODE
+IF AddStep THEN
+    // Store StepDescription, StepResult in array or file buffer
+    // ...
+END_IF
+
+IF WriteLogToFile THEN
+    // Write entire log array to file
+END_IF
+
+IF PrintToLogger THEN
+    // Print to standard output, or do something else
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
