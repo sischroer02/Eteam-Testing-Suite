@@ -55,6 +55,19 @@ VAR_GLOBAL
     mine_phone_battery_manual AT%I* : BOOL; (* mine phone battery manual, Unknown Port *)
     ping_ips AT%I* : BOOL; (* ping ips, Unknown Port *)
     gfci_test_manual AT%I* : BOOL; (* gfci test manual, Unknown Port *)	
-END_VAR]]></Declaration>
+	
+	
+	
+	
+	
+	bStartTest  : BOOL := FALSE;  // user toggles to start
+    bNextStep   : BOOL := FALSE;  // user toggles or clicks for next step
+    bWriteLog   : BOOL := FALSE;  // user toggles to generate final log
+    bTestDone   : BOOL := FALSE;  // set by the PLC when all sections done
+
+    // Could also have states or instructions in a string
+    sInstruction : STRING(80);    // text to display on HMI
+END_VAR
+	]]></Declaration>
   </GVL>
 </TcPlcObject>

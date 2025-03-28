@@ -2,7 +2,7 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.25">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
 			<BitSize>6</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -11,7 +11,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000C}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..11] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000C}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..11] OF BIT</Name>
 			<BitSize>12</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -20,7 +20,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000A}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..9] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000A}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..9] OF BIT</Name>
 			<BitSize>10</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -47,7 +47,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
 			<BitSize>7</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -73,7 +73,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{A9AF9B27-FB7E-424A-B300-154CE534B55E}" Name="Untitled1" PrjFilePath="Untitled1\Untitled1.plcproj" TmcFilePath="Untitled1\Untitled1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Untitled1\Untitled1.tmc">
 					<Name>Untitled1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">

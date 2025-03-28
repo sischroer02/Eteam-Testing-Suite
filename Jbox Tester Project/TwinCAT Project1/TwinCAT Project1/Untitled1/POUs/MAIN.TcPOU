@@ -9,36 +9,82 @@ VAR
 	
 	TestLogger : FB_TestLogger; // instance of test logger FB
 	StartAllTests : BOOL;
+	
+	eTestStage : INT := 0;   // 0 = idle, 1 = Section1, 2 = Section2, etc.
+
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[Section1(
-    StartTest := StartAllTests,
-    SF1_Continuity := GVL.SF1,
-    SF2_Continuity := GVL.SF2,
-	SF4_Continuity := GVL.SF4,
-	SF6_Continuity := GVL.SF6,
-	SF8_Continuity := GVL.SF8,
-	S33_Up := GVL.J1_1,
-	S33_Us := GVL.J1_2,
-	S34_Up := GVL.J2_1,
-	S34_Us := GVL.J2_2,
-	S25_Up := GVL.J3_1,
-	S25_Us := GVL.J3_2,
-	S26_Up := GVL.J4_1,
-	S26_Us := GVL.J4_2,
-	S27_Up := GVL.J5_1,
-	S27_Us := GVL.J5_2,
-	S28_Up := GVL.J6_1,
-	S28_Us := GVL.J6_2,
-	S29_Up := GVL.J7_4,
-	S29_Us := GVL.J7_5,
-	S30_Up := GVL.J8_4,
-	S30_Us := GVL.J8_5,
-	Door_Switch_Closed := GVL.Door_Switch,
-	EStop_Nominal := GVL.Estop_Signal,
-    Logger := TestLogger
-);
+      <ST><![CDATA[
+
+CASE eTestStage OF
+	
+	0: // Idle
+		IF GVL.bStartTest THEN
+			// user pressed "Start Test"
+			eTestStage := 1;
+			GVL.bStartTest := FALSE;
+		END_IF
+	
+		
+		
+	1: // Run Section1
+		Section1(
+    		StartTest := StartAllTests,
+    		SF1_Continuity := GVL.SF1,
+    		SF2_Continuity := GVL.SF2,
+			SF4_Continuity := GVL.SF4,
+			SF6_Continuity := GVL.SF6,
+			SF8_Continuity := GVL.SF8,
+			S33_Up := GVL.J1_1,
+			S33_Us := GVL.J1_2,
+			S34_Up := GVL.J2_1,
+			S34_Us := GVL.J2_2,
+			S25_Up := GVL.J3_1,
+			S25_Us := GVL.J3_2,
+			S26_Up := GVL.J4_1,
+			S26_Us := GVL.J4_2,
+			S27_Up := GVL.J5_1,
+			S27_Us := GVL.J5_2,
+			S28_Up := GVL.J6_1,
+			S28_Us := GVL.J6_2,
+			S29_Up := GVL.J7_4,
+			S29_Us := GVL.J7_5,
+			S30_Up := GVL.J8_4,
+			S30_Us := GVL.J8_5,
+			Door_Switch_Closed := GVL.Door_Switch,
+			EStop_Nominal := GVL.Estop_Signal,
+			Logger := TestLogger
+		);
+		IF Section1.Done THEN
+			eTestStage := 2;
+		END_IF
+		
+	2: 
+		GVL.sInstruction := 'Check Wiring, press Next to proceed to Section2';
+		IF GVL.bNextStep THEN
+			eTestStage := 3;
+			GVL.bNextStep := FALSE;
+		END_IF
+		
+	4: // Test done
+		GVL.bTestDone := TRUE;
+		// optionally automatically set bWriteLog = True
+		// or let user do it from HMI
+		
+		IF GVL.bWriteLog THEN
+			// trigger final log
+			TestLogger.WriteLogToFile := TRUE;
+			TestLogger();
+			// reset
+			TestLogger.WriteLogToFile := FALSE;
+			GVL.bWriteLog := FALSE;
+			eTestStage := 0;
+		END_IF
+		
+END_CASE
+
+
 
 (*
 IF Section1.Done THEN
@@ -54,11 +100,34 @@ END_IF
 *)
 
 // Finally, handle log writing or printing
-IF bWriteLog THEN
+IF GVL.bWriteLog THEN
     TestLogger.WriteLogToFile := TRUE;
 END_IF
 TestLogger();  // calls the logger
 TestLogger.WriteLogToFile := FALSE; // reset]]></ST>
     </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="58" Count="2" />
+      <LineId Id="69" Count="3" />
+      <LineId Id="74" Count="1" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="77" Count="2" />
+      <LineId Id="108" Count="25" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="135" Count="2" />
+      <LineId Id="139" Count="2" />
+      <LineId Id="143" Count="1" />
+      <LineId Id="146" Count="0" />
+      <LineId Id="145" Count="0" />
+      <LineId Id="147" Count="7" />
+      <LineId Id="156" Count="5" />
+      <LineId Id="155" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="29" Count="19" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

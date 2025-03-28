@@ -15,6 +15,7 @@
     <Implicit_KindOfTask>{6a123e29-41de-4525-8d80-e9d2dde5efb9}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{c83ca57d-031e-4c0a-8129-b7218f11a05b}</Implicit_Jitter_Distribution>
     <LibraryReferences>{083f5528-1853-410e-ae4b-e2f3ac045a02}</LibraryReferences>
+    <Released>false</Released>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GVLs\GVL.TcGVL">
@@ -49,6 +50,10 @@
       <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_System</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_Utilities">
+      <DefaultResolution>Tc2_Utilities, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Utilities</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Module">
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
@@ -62,19 +67,19 @@
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" />
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

@@ -3,40 +3,186 @@
   <POU Name="FB_TestLogger" Id="{0051d978-509f-4b56-ae46-ffc1d27dfb15}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_TestLogger
 VAR_INPUT
-    WriteLogToFile : BOOL;
-    PrintToLogger  : BOOL;
+    WriteLogToFile : BOOL;  // triggers printing the log
+    PrintToLogger  : BOOL;  // not currently used
+	AddStep         : BOOL;         // set to TRUE to log a new line
+    StepDescription : STRING(50);
+    StepResult      : BOOL;
+
+    LogMessages : ARRAY[0..49] OF STRING(100);
+    LogResults  : ARRAY[0..49] OF BOOL;
+    LogCount    : INT := 0;
+
+    i           : INT; // used for loops
+	passFailStr : STRING(10);  // holds "PASS" or "FAIL"
+
 END_VAR
 
 VAR_IN_OUT
-    // Possibly some reference to arrays, or file paths
+    // Not used in this minimal approach
 END_VAR
 
 VAR_OUTPUT
-    // Some status, maybe an error code
+    // No output for now
 END_VAR
 
 VAR
-    AddStep       : BOOL;
-    StepDescription : STRING(50);
-    StepResult    : BOOL;
-    // internal array or file handling
-END_VAR
-]]></Declaration>
+	eFileState : INT := 0; 
+	fbFileOpen  : FB_FileOpen;
+    fbFileWrite : FB_FileWrite;
+    fbFileClose : FB_FileClose;
+	
+	hFile : UINT; 
+    sData : STRING(255); 
+
+	
+END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-/// PSEUDOCODE
+// On every call:
 IF AddStep THEN
-    // Store StepDescription, StepResult in array or file buffer
-    // ...
+    IF (LogCount < 50) THEN
+        LogMessages[LogCount] := StepDescription;
+        LogResults[LogCount]  := StepResult;
+        LogCount := LogCount + 1;
+    END_IF
+    // Typically, the calling FB sets AddStep := FALSE after logging
 END_IF
 
-IF WriteLogToFile THEN
-    // Write entire log array to file
-END_IF
+CASE eFileState OF
 
-IF PrintToLogger THEN
-    // Print to standard output, or do something else
-END_IF]]></ST>
+    0:  // Idle, do nothing until user sets WriteLogToFile = TRUE
+        IF WriteLogToFile THEN
+            eFileState := 10;  // proceed to open the file
+        END_IF
+
+
+    10: // Open the file
+        fbFileOpen.sPathName := 'C:\MyTestLog.txt';  // Adjust path as needed
+        fbFileOpen.nMode     := FOPEN_MODEWRITE;     // or FOPEN_MODEAPPEND if you want to append
+        fbFileOpen.bExecute  := TRUE;
+
+        fbFileOpen();  // call the FB
+
+        // Wait until not busy
+        IF NOT fbFileOpen.bBusy THEN
+            fbFileOpen.bExecute := FALSE;
+
+            IF NOT fbFileOpen.bError THEN
+                // success
+                hFile := fbFileOpen.hFile;  
+                i := 0; 
+                eFileState := 20; // move to "write lines" state
+            ELSE
+                // handle open error if needed
+                eFileState := 0;  // go idle
+                WriteLogToFile := FALSE; 
+            END_IF
+        END_IF
+
+
+    20: // Write each log entry
+        IF i < LogCount THEN
+
+            // Build "Message: PASS" or "Message: FAIL" plus newline
+            sData := CONCAT(LogMessages[i], ': ');
+            IF LogResults[i] THEN
+                passFailStr := 'PASS';
+            ELSE
+                passFailStr := 'FAIL';
+            END_IF
+            sData := CONCAT(sData, passFailStr);
+            // Add newline (CRLF) if desired
+            sData[LEN(sData)+1] := 13;
+			sData[LEN(SData)+2] := 10;
+			sData[LEN(sData)+3] := 0;
+
+            // Configure FB_FileWrite
+            fbFileWrite.hFile   := hFile;
+            fbFileWrite.pWriteBuff   := ADR(sData);
+            fbFileWrite.cbWriteLen   := LEN(sData);   // or SIZEOF(sData) 
+            fbFileWrite.bExecute := TRUE;
+
+            fbFileWrite();  // call the FB
+
+            IF NOT fbFileWrite.bBusy THEN
+                fbFileWrite.bExecute := FALSE;
+
+                IF NOT fbFileWrite.bError THEN
+                    // wrote one line successfully
+                    i := i + 1;
+                ELSE
+                    // handle error
+                    eFileState := 30; // skip to close
+                END_IF
+            END_IF
+
+        ELSE
+            // we wrote all lines
+            eFileState := 30; 
+        END_IF
+
+
+    30: // Close the file
+        fbFileClose.hFile    := hFile;
+        fbFileClose.bExecute := TRUE;
+
+        fbFileClose();  // call the FB
+
+        IF NOT fbFileClose.bBusy THEN
+            fbFileClose.bExecute := FALSE;
+
+            IF NOT fbFileClose.bError THEN
+                // file closed
+            ELSE
+                // handle close error
+            END_IF
+
+            // done writing
+            LogCount := 0;           // clear the log
+            WriteLogToFile := FALSE; // reset user flag
+            eFileState := 0;         // go idle
+        END_IF
+
+END_CASE
+
+]]></ST>
     </Implementation>
+    <Method Name="AppendCRLF" Id="{0adc3f85-aed0-4829-b085-b9fcac63bfb7}">
+      <Declaration><![CDATA[METHOD AppendCRLF : BOOL
+VAR_INPUT
+END_VAR
+
+VAR
+	strLen : INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[strLen := LEN(sData);
+
+sData[strLen + 1] := 13;
+sData[strLen + 2] := 10;
+sData[strLen +3] := 0;
+
+AppendCRLF := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_TestLogger">
+      <LineId Id="138" Count="9" />
+      <LineId Id="278" Count="45" />
+      <LineId Id="373" Count="1" />
+      <LineId Id="325" Count="47" />
+      <LineId Id="277" Count="0" />
+      <LineId Id="148" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_TestLogger.AppendCRLF">
+      <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="12" Count="1" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
