@@ -368,7 +368,7 @@
 					<Name>Image</Name>
 				</Image>
 				<Box Id="1" BoxType="9099" BoxFlags="#x00000020">
-					<Name>Term 1 (EK1914)</Name>
+					<Name>C0 (EK1914)</Name>
 					<ImageId>118</ImageId>
 					<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="3" FoeType="1" VendorId="#x00000002" ProductCode="#x077a2c52" RevisionNo="#x00120000" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="305" MaxSlotCount="2" Type="EK1914, 2 Ch. Safety Input/Output 24V,  TwinSAFE" Desc="EK1914" PortABoxInfo="#x00ffffff">
 						<SyncMan>001000012600010001000000400000010001001026010000</SyncMan>
@@ -383,10 +383,10 @@
 							<Entry Name="FSOE__FSoE Slave CMD" Index="#x6000" Sub="#x01">
 								<Type>USINT</Type>
 							</Entry>
-							<Entry Name="FSOE__InputChannel1" Index="#x6001" Sub="#x01">
+							<Entry Name="FSOE__InputChannel1" Index="#x6001" Sub="#x01" Flags="#x00008020">
 								<Type>BIT</Type>
 							</Entry>
-							<Entry Name="FSOE__InputChannel2" Index="#x6001" Sub="#x02">
+							<Entry Name="FSOE__InputChannel2" Index="#x6001" Sub="#x02" Flags="#x00008020">
 								<Type>BIT</Type>
 							</Entry>
 							<Entry Name="FSOE__">
@@ -484,7 +484,7 @@
 						</Slot>
 					</EtherCAT>
 					<Box Id="2" BoxType="9099">
-						<Name>Term 2 (EL9410)</Name>
+						<Name>C1 (EL9410)</Name>
 						<ImageId>1000</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x24c23052" RevisionNo="#x00110000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL9410 E-Bus Power Supplier  (Diagnostics)" Desc="EL9410" PortABoxInfo="#x01000001">
 							<SyncMan>001001000000010004000000000000000000001000000000</SyncMan>
@@ -502,7 +502,7 @@
 						</EtherCAT>
 					</Box>
 					<Box Id="3" BoxType="9099" BoxFlags="#x00000020">
-						<Name>Term 3 (EL2014)</Name>
+						<Name>C2 (EL2014)</Name>
 						<ImageId>1001</ImageId>
 						<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x07de3052" RevisionNo="#x00110000" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL2014 4Ch. Dig. Output 24V, 0,5A, Diagnostic" Desc="EL2014" PortABoxInfo="#x01000002">
 							<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
@@ -581,7 +581,7 @@
 								<Entry Name="Channel 1__Output" Index="#x7000" Sub="#x01" Flags="#x00008020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Channel 2__Output" Index="#x7010" Sub="#x01">
+								<Entry Name="Channel 2__Output" Index="#x7010" Sub="#x01" Flags="#x00008020">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="Channel 3__Output" Index="#x7020" Sub="#x01">
@@ -598,7 +598,7 @@
 						</EtherCAT>
 					</Box>
 					<Box Id="4" BoxType="9099">
-						<Name>Term 4 (EL1018)</Name>
+						<Name>C3 (EL1018)</Name>
 						<ImageId>7</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03fa3052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1018 8Ch. Dig. Input 24V, 10µs" Desc="EL1018" PortABoxInfo="#x01000003">
 							<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
@@ -646,7 +646,7 @@
 						</EtherCAT>
 					</Box>
 					<Box Id="5" BoxType="9099">
-						<Name>Term 5 (EL1018)</Name>
+						<Name>C4 (EL1018)</Name>
 						<ImageId>7</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03fa3052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1018 8Ch. Dig. Input 24V, 10µs" Desc="EL1018" PortABoxInfo="#x01000004">
 							<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
@@ -694,7 +694,7 @@
 						</EtherCAT>
 					</Box>
 					<Box Id="6" BoxType="9099">
-						<Name>Term 6 (EL1008)</Name>
+						<Name>C5 (EL1008)</Name>
 						<ImageId>7</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03f03052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1008 8Ch. Dig. Input 24V, 3ms" Desc="EL1008" PortABoxInfo="#x01000005">
 							<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
@@ -742,11 +742,11 @@
 						</EtherCAT>
 					</Box>
 					<Box Id="7" BoxType="9099">
-						<Name>Term 7 (EK1122-0008)</Name>
+						<Name>C6 (EK1122-0008)</Name>
 						<ImageId>1002</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04622c52" RevisionNo="#x00100008" PortPhys="4883" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1122-0008 2 port EtherCAT junction M8" Desc="EK1122-0008" PortABoxInfo="#x01000006"/>
 						<Box Id="8" BoxType="9099" BoxFlags="#x00000020">
-							<Name>Term 8 (EK1914)</Name>
+							<Name>JBC0 (EK1914)</Name>
 							<ImageId>118</ImageId>
 							<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="3" FoeType="1" VendorId="#x00000002" ProductCode="#x077a2c52" RevisionNo="#x00120000" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="305" MaxSlotCount="2" Type="EK1914, 2 Ch. Safety Input/Output 24V,  TwinSAFE" Desc="EK1914" PortABoxInfo="#x01000007">
 								<SyncMan>001000012600010001000000400000010001001026010000</SyncMan>
@@ -862,7 +862,7 @@
 								</Slot>
 							</EtherCAT>
 							<Box Id="9" BoxType="9099">
-								<Name>Term 9 (EL9410)</Name>
+								<Name>JBC1 (EL9410)</Name>
 								<ImageId>1000</ImageId>
 								<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x24c23052" RevisionNo="#x00110000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL9410 E-Bus Power Supplier  (Diagnostics)" Desc="EL9410" PortABoxInfo="#x01000008">
 									<SyncMan>001001000000010004000000000000000000001000000000</SyncMan>
@@ -880,7 +880,7 @@
 								</EtherCAT>
 							</Box>
 							<Box Id="10" BoxType="9099" BoxFlags="#x00000020">
-								<Name>Term 10 (EL1904)</Name>
+								<Name>JBC2 (EL1904)</Name>
 								<ImageId>118</ImageId>
 								<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x07703052" RevisionNo="#x00130000" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="51" MaxSlotCount="1" Type="EL1904, 4 Ch. Safety Input 24V, TwinSAFE" Desc="EL1904" PortABoxInfo="#x01000009">
 									<SyncMan>001000012600010001000000400000010001001026010000</SyncMan>
@@ -947,7 +947,7 @@
 								</EtherCAT>
 							</Box>
 							<Box Id="11" BoxType="9099">
-								<Name>Term 11 (EL3174)</Name>
+								<Name>JBC3 (EL3174)</Name>
 								<ImageId>1003</ImageId>
 								<EtherCAT SlaveType="2" PdiType="#x0405" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x0c663052" RevisionNo="#x00110000" InfoDataAddr="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL3174 4K. Ana. Eingang  +/-10V Diff., +/-20mA SingleEnded, 16 Bit" Desc="EL3174" PortABoxInfo="#x0100000a">
 									<SyncMan>001080002600010001000000000000008000001026010000</SyncMan>
@@ -1122,16 +1122,16 @@
 								</EtherCAT>
 							</Box>
 							<Box Id="12" BoxType="9099">
-								<Name>Term 12 (EK1122-0008)</Name>
+								<Name>JBC4 (EK1122-0008)</Name>
 								<ImageId>1002</ImageId>
 								<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04622c52" RevisionNo="#x00100008" PortPhys="4883" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1122-0008 2 port EtherCAT junction M8" Desc="EK1122-0008" PortABoxInfo="#x0100000b"/>
 							</Box>
 							<Box Id="13" BoxType="9099">
-								<Name>Term 13 (EK1122-0008)</Name>
+								<Name>JBC5 (EK1122-0008)</Name>
 								<ImageId>1002</ImageId>
 								<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04622c52" RevisionNo="#x00100008" PortPhys="4883" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1122-0008 2 port EtherCAT junction M8" Desc="EK1122-0008" PortABoxInfo="#x0200000c"/>
 								<Box Id="14" BoxType="9099" BoxFlags="#x00000020">
-									<Name>Box 14 (EP3752-0000)</Name>
+									<Name>JBB0 (EP3752-0000)</Name>
 									<ImageId>1004</ImageId>
 									<EtherCAT SlaveType="2" PdiType="#x0205" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="35" FoeType="1" VendorId="#x00000002" ProductCode="#x0ea84052" RevisionNo="#x00120000" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="17" SdoUploadWithMaxLength="true" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP3752-0000 Acceleration Sensor" Desc="EP3752-0000" PortABoxInfo="#x0100000d">
 										<SyncMan>001000012600010001000000400000010001001026010000</SyncMan>
@@ -1281,10 +1281,10 @@
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Untitled1^Untitled1 Instance">
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1914)^Term 3 (EL2014)">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C2 (EL2014)">
 				<Link VarA="PlcTask Outputs^GVL.SF5" VarB="DIG Outputs^Channel 1^Output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1914)^Term 4 (EL1018)">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C3 (EL1018)">
 				<Link VarA="PlcTask Inputs^GVL.J3_1" VarB="Channel 4^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.J3_2" VarB="Channel 5^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.J4_1" VarB="Channel 6^Input"/>
@@ -1293,7 +1293,7 @@
 				<Link VarA="PlcTask Inputs^GVL.J7_5" VarB="Channel 3^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.SF4" VarB="Channel 1^Input"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1914)^Term 5 (EL1018)">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C4 (EL1018)">
 				<Link VarA="PlcTask Inputs^GVL.J5_1" VarB="Channel 1^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.J5_2" VarB="Channel 2^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.J6_1" VarB="Channel 3^Input"/>
@@ -1303,7 +1303,7 @@
 				<Link VarA="PlcTask Inputs^GVL.SF1" VarB="Channel 8^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.SF2" VarB="Channel 7^Input"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1914)^Term 6 (EL1008)">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C5 (EL1008)">
 				<Link VarA="PlcTask Inputs^GVL.J1_1" VarB="Channel 3^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.J1_2" VarB="Channel 4^Input"/>
 				<Link VarA="PlcTask Inputs^GVL.J2_1" VarB="Channel 5^Input"/>

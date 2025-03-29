@@ -4,6 +4,37 @@
     <Declaration><![CDATA[
 
 VAR_GLOBAL
+	
+
+	HMI_BEGIN_TEST : BOOL;
+	
+	HMI_NEXT_SECTION : BOOL;
+	
+	HMI_INSTRUCTIONS : STRING(100);
+	
+	HMI_ABORT_TEST : BOOL;
+	
+	HMI_COMPLETE_TEST : BOOL;
+	
+	TESTING_PROGRAM_COMPLETE : BOOL;
+	
+END_VAR
+
+
+
+
+ 	// 
+
+
+
+
+
+
+
+
+(*
+
+
     SF1 AT%I* : BOOL; (* Mine Phone Continuity SF1 (1008 (2) port 8) *)
     SF2 AT%I* : BOOL; (* Mine Phone Continuity SF2 (1008 (2) port 7) *)
     SF6 AT%I* : BOOL; (* MGT Continuity SF6 (1008 (3) port 1) *)
@@ -84,9 +115,7 @@ VAR_GLOBAL
 	
 	*)
 	
-
-
-END_VAR
+*)
 	
 	]]></Declaration>
   </GVL>

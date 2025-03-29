@@ -5,121 +5,90 @@
 VAR_INPUT
 END_VAR
 VAR
-	Section1 : FB_Execute_Section_1;  // instance of your new FB
+	ExecuteSection1 : FB_EXECUTE_SECTION1;
 	
-	LogResult : FB_Add_Test_Result;
-	
-	//TestLogger : FB_SimpleLogger; // instance of test logger FB
-	StartAllTests : BOOL;
-	
-	eTestStage : INT := 0;   // 0 = idle, 1 = Section1, 2 = Section2, etc.
-	
-	hmi_i : UDINT;
-	hmi_start_index : UDINT;
-	total_test_logs : UDINT;
-	
-	hmi_result_string : STRING(4096);
-	
-	CRLF : STRING(2) := '
-';
+	ExecuteSection3 : FB_EXECUTE_SECTION3;
 
+
+	ActiveTestStage : INT := 0;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 
-CASE eTestStage OF
+CASE ActiveTestStage OF
 	
 	0: // Idle
-		IF GVL.bStartTest THEN
-			// user pressed "Start Test"
-			StartAllTests := TRUE;
-			eTestStage := 1;
-			GVL.bStartTest := FALSE;
+		IF GVL.HMI_BEGIN_TEST THEN
+			// user pressed "BEGIN Test"
+			ActiveTestStage := 1;
+			GVL.HMI_BEGIN_TEST := FALSE;
 		END_IF
 	
 		
 		
-	1: // Run Section1
-		Section1(
-    		StartTest := StartAllTests,
-    		SF1_Continuity := GVL.SF1,
-    		SF2_Continuity := GVL.SF2,
-			SF4_Continuity := GVL.SF4,
-			SF6_Continuity := GVL.SF6,
-			SF8_Continuity := GVL.SF8,
-			S33_Up := GVL.J1_1,
-			S33_Us := GVL.J1_2,
-			S34_Up := GVL.J2_1,
-			S34_Us := GVL.J2_2,
-			S25_Up := GVL.J3_1,
-			S25_Us := GVL.J3_2,
-			S26_Up := GVL.J4_1,
-			S26_Us := GVL.J4_2,
-			S27_Up := GVL.J5_1,
-			S27_Us := GVL.J5_2,
-			S28_Up := GVL.J6_1,
-			S28_Us := GVL.J6_2,
-			S29_Up := GVL.J7_4,
-			S29_Us := GVL.J7_5,
-			S30_Up := GVL.J8_4,
-			S30_Us := GVL.J8_5,
-			Door_Switch_Closed := GVL.Door_Switch,
-			EStop_Nominal := GVL.Estop_Signal,
-			Logger := LogResult
-		);
-		IF Section1.Done THEN
-			eTestStage := 2;
+	1: 
+		// Run Section1
+		WRITE_IO_VALUES();
+		ExecuteSection1(StartTest := TRUE);
+		
+		// Log Section1
+		IF ExecuteSection1.Done THEN
+			LOG_SECTION1();
+			ActiveTestStage := 2;
 		END_IF
 		
 	2: 
-		GVL.sInstruction := 'Check Wiring, press Next to proceed to Section2';
-		IF GVL.bNextStep THEN
-			eTestStage := 4;
-			GVL.bNextStep := FALSE;
+		GVL.HMI_INSTRUCTIONS := 'Open JBOX DOOR, PRESS ESTOP, PULL FIRE ALARM HANDLE';
+		IF GVL.HMI_NEXT_SECTION THEN
+			ActiveTestStage := 3;
+			GVL.HMI_NEXT_SECTION := FALSE;
 		END_IF
+		
+	3:
+		WRITE_IO_VALUES();
+		ExecuteSection3(StartTest := TRUE);
+		
+		// Log Section1
+		IF ExecuteSection3.Done THEN
+			LOG_SECTION3();
+			ActiveTestStage := 4;
+		END_IF
+		
 		
 	4: // Test done
-		GVL.bTestDone := TRUE;
-		
-		
-		(*
-		hmi_result_string := '';
-		
-		total_test_logs := SIZEOF(LogResult.TestResults) / SIZEOF(LogResult.TestResults[0]);
+		GVL.TESTING_PROGRAM_COMPLETE := TRUE;
 
 		
-		IF GVL.bWriteLog THEN
-			
-			GVL.hmiTotalElements := SIZEOF(LogResult.TestResults) / SIZEOF(LogResult.TestResults[0]);
-		
-			hmi_start_index := GVL.hmi_page_index * GVL.hmiPageSize;
-		
-			FOR hmi_i := 0 TO GVL.hmiPageSize - 1 DO
-				
-				IF (hmi_start_index + hmi_i) < GVL.hmiTotalElements THEN
-					DisplayResults[i] := LogResult.TestResults[hmi_start_index + i];
-				ELSE
-					DisplayResults[i] := '';
-				END_IF
-			
-			END_FOR
-			// GVL.HMITestResults := hmi_result_string;
-			eTestStage := 0;
-			StartAllTests := FALSE;
-			GVL.bTestDone := FALSE;
-		END_IF
-		
-		*)
-		
-		IF GVL.bEndTest THEN
-			eTestStage := 0;
-			StartAllTests := FALSE;
-			GVL.bTestDone := FALSE;
+		IF GVL.HMI_ABORT_TEST THEN
+			ActiveTestStage := 0;
+			GVL.TESTING_PROGRAM_COMPLETE := FALSE;
 		END_IF
 		
 		
 END_CASE]]></ST>
     </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="3" Count="6" />
+      <LineId Id="11" Count="6" />
+      <LineId Id="135" Count="0" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="136" Count="0" />
+      <LineId Id="130" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="46" Count="8" />
+      <LineId Id="132" Count="1" />
+      <LineId Id="137" Count="2" />
+      <LineId Id="141" Count="3" />
+      <LineId Id="140" Count="0" />
+      <LineId Id="134" Count="0" />
+      <LineId Id="55" Count="2" />
+      <LineId Id="87" Count="3" />
+      <LineId Id="145" Count="0" />
+      <LineId Id="93" Count="2" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
