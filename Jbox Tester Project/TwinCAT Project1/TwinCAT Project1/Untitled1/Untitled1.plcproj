@@ -18,6 +18,9 @@
     <Released>false</Released>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\Datastructure1.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\GVL.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -25,10 +28,10 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_Execute_Section_1.TcPOU">
+    <Compile Include="POUs\FB_Add_Test_Result.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_TestLogger.TcPOU">
+    <Compile Include="POUs\FB_Execute_Section_1.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
   <GVL Name="GVL" Id="{f15cefbf-3aef-482d-8180-da7d07eebc38}">
-    <Declaration><![CDATA[{attribute 'qualified_only'}
+    <Declaration><![CDATA[
+
 VAR_GLOBAL
     SF1 AT%I* : BOOL; (* Mine Phone Continuity SF1 (1008 (2) port 8) *)
     SF2 AT%I* : BOOL; (* Mine Phone Continuity SF2 (1008 (2) port 7) *)
@@ -63,11 +64,30 @@ VAR_GLOBAL
 	bStartTest  : BOOL := FALSE;  // user toggles to start
     bNextStep   : BOOL := FALSE;  // user toggles or clicks for next step
     bWriteLog   : BOOL := FALSE;  // user toggles to generate final log
+	bEndTest    : BOOL := FALSE; // user toggles to end without logging once plc sections are done
     bTestDone   : BOOL := FALSE;  // set by the PLC when all sections done
 
     // Could also have states or instructions in a string
     sInstruction : STRING(80);    // text to display on HMI
+	
+	TestResults : ARRAY[0..100] OF Datastructure1;
+	
+	// TestResultsTable : ARRAY[0..99] OF TTestResult;
+	
+	(*
+	HMITestResults : STRING(4096);
+	
+	hmi_page_index : INT;
+	hmiPageSize : INT := 20;
+	hmiTotalElements : UDINT; 
+	hmiDisplayResults : ARRAY[0..19] OF STRING(255);
+	
+	*)
+	
+
+
 END_VAR
+	
 	]]></Declaration>
   </GVL>
 </TcPlcObject>
