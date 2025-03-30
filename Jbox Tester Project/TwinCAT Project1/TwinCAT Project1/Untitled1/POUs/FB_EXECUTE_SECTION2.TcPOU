@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <POU Name="FB_EXECUTE_SECTION3" Id="{39c2b161-f2cb-4eab-8c73-0ee3f6bdee1a}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_EXECUTE_SECTION3
+  <POU Name="FB_EXECUTE_SECTION2" Id="{39c2b161-f2cb-4eab-8c73-0ee3f6bdee1a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_EXECUTE_SECTION2
 VAR_INPUT
 	StartTest : BOOL; // Tells this FB to start its checks
 END_VAR
@@ -26,10 +26,10 @@ END_VAR
         0:
 			// DIGITAL INPUTS
 			FOR i := 0 TO CONSTANTS.SECTION3_NUM_DIG_TESTS - 1 DO
-				IF GVL_IO_STRUCTS.IO_MAP_SECTION3_DIG[i].LIVE_BOOL = GVL_IO_STRUCTS.IO_MAP_SECTION3_DIG[i].EXPECTED_BOOL THEN
-					GVL_IO_STRUCTS.IO_MAP_SECTION3_DIG[i].RESULT := TRUE;
+				IF GVL_IO_STRUCTS.IO_MAP_SECTION2_DIG[i].LIVE_BOOL = GVL_IO_STRUCTS.IO_MAP_SECTION3_DIG[i].EXPECTED_BOOL THEN
+					GVL_IO_STRUCTS.IO_MAP_SECTION2_DIG[i].RESULT := TRUE;
 				ELSE
-					GVL_IO_STRUCTS.IO_MAP_SECTION3_DIG[i].RESULT := FALSE;
+					GVL_IO_STRUCTS.IO_MAP_SECTION2_DIG[i].RESULT := FALSE;
 				END_IF
 			END_FOR
 			
@@ -47,7 +47,7 @@ ELSE
     state  := 0;
 END_IF]]></ST>
     </Implementation>
-    <LineIds Name="FB_EXECUTE_SECTION3">
+    <LineIds Name="FB_EXECUTE_SECTION2">
       <LineId Id="8" Count="24" />
       <LineId Id="7" Count="0" />
     </LineIds>

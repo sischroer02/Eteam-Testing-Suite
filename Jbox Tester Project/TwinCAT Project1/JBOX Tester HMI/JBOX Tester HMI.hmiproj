@@ -113,6 +113,21 @@
   <Target Name="Clean" DependsOnTargets="$(CleanDependsOn)" />
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <ItemGroup>
+    <Content Include="Home Screen.view">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Section1.view">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Section2.view">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Section4.view">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Section3.view">
+      <SubType>Content</SubType>
+    </Content>
     <Folder Include="Fonts\" />
     <Folder Include="Images" />
     <Folder Include="Images\Manifest" />

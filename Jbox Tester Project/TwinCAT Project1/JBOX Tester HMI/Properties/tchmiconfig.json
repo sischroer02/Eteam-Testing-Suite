@@ -58,6 +58,36 @@
       "preload": false,
       "keepAlive": false,
       "preloadBindings": false
+    },
+    {
+      "url": "Home Screen.view",
+      "preload": false,
+      "keepAlive": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Section1.view",
+      "preload": false,
+      "keepAlive": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Section2.view",
+      "preload": false,
+      "keepAlive": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Section3.view",
+      "preload": false,
+      "keepAlive": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Section4.view",
+      "preload": false,
+      "keepAlive": false,
+      "preloadBindings": false
     }
   ],
   "userFunctions": [],

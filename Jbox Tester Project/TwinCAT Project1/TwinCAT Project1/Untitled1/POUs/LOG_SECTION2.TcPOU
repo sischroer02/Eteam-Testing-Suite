@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <POU Name="LOG_SECTION3" Id="{c622520c-23e0-46a3-ad01-a7ca3917a831}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION LOG_SECTION3 : BOOL
+  <POU Name="LOG_SECTION2" Id="{c622520c-23e0-46a3-ad01-a7ca3917a831}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION LOG_SECTION2 : BOOL
 VAR_INPUT
 END_VAR
 VAR
@@ -13,20 +13,20 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[start_index := GVL_LOGS.NUM_TESTS_LOGGED;
-end_index := start_index + CONSTANTS.SECTION3_NUM_DIG_TESTS-1;
+end_index := start_index + CONSTANTS.SECTION2_NUM_DIG_TESTS-1;
 
 // SECTION 3 DIGITAL INPUTS
 FOR i := start_index TO end_index DO
 	j := i - start_index;
-	GVL_LOGS.TEST_RESULTS_ARRAY[i].DESCRIPTION := GVL_IO_STRUCTS.IO_MAP_SECTION3_DIG[j].DESCRIPTION;
+	GVL_LOGS.TEST_RESULTS_ARRAY[i].DESCRIPTION := GVL_IO_STRUCTS.IO_MAP_SECTION2_DIG[j].DESCRIPTION;
 	GVL_LOGS.TEST_RESULTS_ARRAY[i].INDEX := i;
-	GVL_LOGS.TEST_RESULTS_ARRAY[i].RESULT := GVL_IO_STRUCTS.IO_MAP_SECTION3_DIG[j].RESULT;
+	GVL_LOGS.TEST_RESULTS_ARRAY[i].RESULT := GVL_IO_STRUCTS.IO_MAP_SECTION2_DIG[j].RESULT;
 	GVL_LOGS.NUM_TESTS_LOGGED := GVL_LOGS.NUM_TESTS_LOGGED + 1;
 END_FOR
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="LOG_SECTION3">
+    <LineIds Name="LOG_SECTION2">
       <LineId Id="10" Count="0" />
       <LineId Id="20" Count="0" />
       <LineId Id="11" Count="2" />

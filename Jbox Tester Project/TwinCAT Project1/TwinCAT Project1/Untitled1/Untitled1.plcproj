@@ -50,13 +50,13 @@
     <Compile Include="POUs\FB_EXECUTE_SECTION1.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_EXECUTE_SECTION3.TcPOU">
+    <Compile Include="POUs\FB_EXECUTE_SECTION2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\INITIALIZE.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\LOG_SECTION3.TcPOU">
+    <Compile Include="POUs\LOG_SECTION2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\LOG_SECTION1.TcPOU">

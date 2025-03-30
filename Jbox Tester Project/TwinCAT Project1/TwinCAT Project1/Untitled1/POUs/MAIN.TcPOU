@@ -6,11 +6,10 @@ VAR_INPUT
 END_VAR
 VAR
 	ExecuteSection1 : FB_EXECUTE_SECTION1;
-	
-	ExecuteSection3 : FB_EXECUTE_SECTION3;
-
-
+	ExecuteSection2 : FB_EXECUTE_SECTION2;
 	ActiveTestStage : INT := 0;
+	tDelay : TON;
+    bDelayDone : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -19,6 +18,7 @@ END_VAR
 CASE ActiveTestStage OF
 	
 	0: // Idle
+		GVL.GO_HOME := TRUE;
 		IF GVL.HMI_BEGIN_TEST THEN
 			// user pressed "BEGIN Test"
 			ActiveTestStage := 1;
@@ -34,42 +34,49 @@ CASE ActiveTestStage OF
 		
 		// Log Section1
 		IF ExecuteSection1.Done THEN
+			GVL.HMI_SECTION_1_COMPLETE := TRUE;
 			LOG_SECTION1();
 			ActiveTestStage := 2;
 		END_IF
 		
 	2: 
-		GVL.HMI_INSTRUCTIONS := 'Open JBOX DOOR, PRESS ESTOP, PULL FIRE ALARM HANDLE';
-		IF GVL.HMI_NEXT_SECTION THEN
-			ActiveTestStage := 3;
-			GVL.HMI_NEXT_SECTION := FALSE;
+		GVL.HMI_SECTION_2_INSTRUCTIONS := 'Open JBOX DOOR, PRESS ESTOP, PULL FIRE ALARM HANDLE';
+		IF GVL.HMI_BEGIN_SECTION_2 THEN
+			HMI_BEGIN_SECTION_2 := FALSE;
+			WRITE_IO_VALUES();
+			ExecuteSection2(StartTest := TRUE);
+			IF ExecuteSection2.Done THEN
+				GVL.HMI_SECTION_2_COMPLETE := TRUE;
+				LOG_SECTION2();
+				ActiveTestStage := 999;
+			END_IF
 		END_IF
 		
-	3:
-		WRITE_IO_VALUES();
-		ExecuteSection3(StartTest := TRUE);
-		
-		// Log Section1
-		IF ExecuteSection3.Done THEN
-			LOG_SECTION3();
-			ActiveTestStage := 4;
-		END_IF
-		
-		
-	4: // Test done
+	999: // Test done
 		GVL.TESTING_PROGRAM_COMPLETE := TRUE;
 
 		
-		IF GVL.HMI_ABORT_TEST THEN
-			ActiveTestStage := 0;
-			GVL.TESTING_PROGRAM_COMPLETE := FALSE;
-		END_IF
 		
-		
-END_CASE]]></ST>
+END_CASE
+
+IF GVL.HMI_RESET_TEST THEN
+    GVL.ABORT_SUCCESSFUL := UNINITIALIZE();
+	tDelay(IN := TRUE, PT := T#3S);
+	
+	bDelayDone := tDelay.Q;
+	IF bDelayDone THEN
+		GVL.ABORT_SUCCESSFUL := FALSE;
+    	GVL.HMI_RESET_TEST := FALSE;
+		ActiveTestStage := 0;
+	END_IF;
+	
+
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="3" Count="6" />
+      <LineId Id="3" Count="4" />
+      <LineId Id="188" Count="0" />
+      <LineId Id="8" Count="1" />
       <LineId Id="11" Count="6" />
       <LineId Id="135" Count="0" />
       <LineId Id="119" Count="0" />
@@ -77,18 +84,32 @@ END_CASE]]></ST>
       <LineId Id="136" Count="0" />
       <LineId Id="130" Count="0" />
       <LineId Id="45" Count="0" />
+      <LineId Id="163" Count="0" />
       <LineId Id="123" Count="0" />
-      <LineId Id="46" Count="8" />
-      <LineId Id="132" Count="1" />
-      <LineId Id="137" Count="2" />
-      <LineId Id="141" Count="3" />
-      <LineId Id="140" Count="0" />
-      <LineId Id="134" Count="0" />
-      <LineId Id="55" Count="2" />
-      <LineId Id="87" Count="3" />
-      <LineId Id="145" Count="0" />
-      <LineId Id="93" Count="2" />
+      <LineId Id="46" Count="5" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="157" Count="1" />
+      <LineId Id="160" Count="0" />
+      <LineId Id="164" Count="0" />
+      <LineId Id="161" Count="1" />
+      <LineId Id="159" Count="0" />
+      <LineId Id="54" Count="3" />
+      <LineId Id="88" Count="0" />
+      <LineId Id="94" Count="1" />
       <LineId Id="2" Count="0" />
+      <LineId Id="166" Count="1" />
+      <LineId Id="169" Count="0" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="186" Count="0" />
+      <LineId Id="180" Count="0" />
+      <LineId Id="182" Count="0" />
+      <LineId Id="187" Count="0" />
+      <LineId Id="184" Count="0" />
+      <LineId Id="183" Count="0" />
+      <LineId Id="179" Count="0" />
+      <LineId Id="172" Count="0" />
+      <LineId Id="171" Count="0" />
+      <LineId Id="165" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
