@@ -84,21 +84,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.JB_DCDCS_OK</Name>
-							<Comment><![CDATA[ JBOX DCDC GOOD Signal ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.JB_PSU1_OK</Name>
-							<Comment><![CDATA[ PSU 1 OK ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.JB_PSU2_OK</Name>
-							<Comment><![CDATA[ PSU 2 OK ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_IO.J7_24V_Us</Name>
 							<Comment><![CDATA[4.2 : BOOL; (*INDEX 5 24V PWR Check J7 (5) (1008 (1) port 3) *)    ]]></Comment>
 							<Type>BOOL</Type>
@@ -201,6 +186,21 @@
 						<Var>
 							<Name>GVL_IO.JB_Door_Switch</Name>
 							<Comment><![CDATA[ Door Switch ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.JB_DCDCS_OK</Name>
+							<Comment><![CDATA[ JBOX DCDC GOOD Signal ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.JB_PSU1_OK</Name>
+							<Comment><![CDATA[ PSU 1 OK ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.JB_PSU2_OK</Name>
+							<Comment><![CDATA[ PSU 2 OK ]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>

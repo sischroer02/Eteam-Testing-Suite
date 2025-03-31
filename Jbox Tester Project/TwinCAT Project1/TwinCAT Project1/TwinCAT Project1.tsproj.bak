@@ -84,29 +84,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.JB_DCDCS_OK</Name>
-							<Comment><![CDATA[ JBOX DCDC GOOD Signal ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.JB_PSU1_OK</Name>
-							<Comment><![CDATA[ PSU 1 OK ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.JB_PSU2_OK</Name>
-							<Comment><![CDATA[ PSU 2 OK ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.JB_PSU1_IOUT</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.JB_PSU2_IOUT</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>GVL_IO.J7_24V_Us</Name>
 							<Comment><![CDATA[4.2 : BOOL; (*INDEX 5 24V PWR Check J7 (5) (1008 (1) port 3) *)    ]]></Comment>
 							<Type>BOOL</Type>
@@ -209,6 +186,21 @@
 						<Var>
 							<Name>GVL_IO.JB_Door_Switch</Name>
 							<Comment><![CDATA[ Door Switch ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.JB_DCDCS_OK</Name>
+							<Comment><![CDATA[ JBOX DCDC GOOD Signal ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.JB_PSU1_OK</Name>
+							<Comment><![CDATA[ PSU 1 OK ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.JB_PSU2_OK</Name>
+							<Comment><![CDATA[ PSU 2 OK ]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -757,42 +749,42 @@
 								<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
 								<BootStrapData>0010f400f410f400</BootStrapData>
 								<Pdo Name="Inputs" Index="#x1a00" Flags="#x0091" SyncMan="3">
-									<Entry Name="FSOE__FSoE Slave CMD" Index="#x6000" Sub="#x01">
+									<Entry Name="FSOE__FSoE Slave CMD" Index="#x6000" Sub="#x01" Flags="#x00008020">
 										<Type>USINT</Type>
 									</Entry>
-									<Entry Name="FSOE__InputChannel1" Index="#x6001" Sub="#x01">
+									<Entry Name="FSOE__InputChannel1" Index="#x6001" Sub="#x01" Flags="#x00008020">
 										<Type>BIT</Type>
 									</Entry>
-									<Entry Name="FSOE__InputChannel2" Index="#x6001" Sub="#x02">
+									<Entry Name="FSOE__InputChannel2" Index="#x6001" Sub="#x02" Flags="#x00008020">
 										<Type>BIT</Type>
 									</Entry>
 									<Entry Name="FSOE__">
 										<Type GUID="{18071995-0000-0000-0000-002000000006}">ARRAY [0..5] OF BIT</Type>
 									</Entry>
-									<Entry Name="FSOE__FSoE Slave CRC_0" Index="#x6000" Sub="#x02">
+									<Entry Name="FSOE__FSoE Slave CRC_0" Index="#x6000" Sub="#x02" Flags="#x00008020">
 										<Type>UINT</Type>
 									</Entry>
-									<Entry Name="FSOE__FSoE Slave ConnID" Index="#x6000" Sub="#x03">
+									<Entry Name="FSOE__FSoE Slave ConnID" Index="#x6000" Sub="#x03" Flags="#x00008020">
 										<Type>UINT</Type>
 									</Entry>
 								</Pdo>
 								<Pdo Name="Outputs" Index="#x1600" InOut="1" Flags="#x0091" SyncMan="2">
-									<Entry Name="FSOE__FSoE Master CMD" Index="#x7000" Sub="#x01">
+									<Entry Name="FSOE__FSoE Master CMD" Index="#x7000" Sub="#x01" Flags="#x00008020">
 										<Type>USINT</Type>
 									</Entry>
-									<Entry Name="FSOE__OutputChannel1" Index="#x7001" Sub="#x01">
+									<Entry Name="FSOE__OutputChannel1" Index="#x7001" Sub="#x01" Flags="#x00008020">
 										<Type>BIT</Type>
 									</Entry>
-									<Entry Name="FSOE__OutputChannel2" Index="#x7001" Sub="#x02">
+									<Entry Name="FSOE__OutputChannel2" Index="#x7001" Sub="#x02" Flags="#x00008020">
 										<Type>BIT</Type>
 									</Entry>
 									<Entry Name="FSOE__">
 										<Type GUID="{18071995-0000-0000-0000-002000000006}">ARRAY [0..5] OF BIT</Type>
 									</Entry>
-									<Entry Name="FSOE__FSoE Master CRC_0" Index="#x7000" Sub="#x02">
+									<Entry Name="FSOE__FSoE Master CRC_0" Index="#x7000" Sub="#x02" Flags="#x00008020">
 										<Type>UINT</Type>
 									</Entry>
-									<Entry Name="FSOE__FSoE Master ConnID" Index="#x7000" Sub="#x03">
+									<Entry Name="FSOE__FSoE Master ConnID" Index="#x7000" Sub="#x03" Flags="#x00008020">
 										<Type>UINT</Type>
 									</Entry>
 								</Pdo>
@@ -1315,10 +1307,6 @@
 				<Link VarA="PlcTask Inputs^GVL_IO.JB_Door_Switch" VarB="Module 2 (DIO)^DIO Inputs^Input 1" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.JB_PSU1_OK" VarB="Module 2 (DIO)^DIO Inputs^Input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IO.JB_PSU2_OK" VarB="Module 2 (DIO)^DIO Inputs^Input 3" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C6 (EK1122-0008)^JBC0 (EK1914)^JBC3 (EL3174)">
-				<Link VarA="PlcTask Inputs^GVL_IO.JB_PSU1_IOUT" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.JB_PSU2_IOUT" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>
