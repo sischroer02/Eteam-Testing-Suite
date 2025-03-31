@@ -18,13 +18,19 @@
     <Released>false</Released>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\HMI_Instructions.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\IO_Struct.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Port_Map.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\Test_Log.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GVLs\GVL.TcGVL">
+    <Compile Include="GVLs\GVL_HMI.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
@@ -66,6 +72,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\UNINITIALIZE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\UPDATE_HMI.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\WRITE_IO_VALUES.TcPOU">

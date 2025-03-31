@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <GVL Name="GVL_HMI" Id="{4b0efed5-fea7-4ab1-971f-445349cfc307}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	JBOX_TEST_PORT_MAP : ARRAY[0..CONSTANTS.NUM_CONNECTIONS-1] OF Port_Map := [
+		(
+			JBOX_PORT := 'J37',
+			TESTER_PORT := 'SF1'
+		),
+		(
+			JBOX_PORT := 'S2',
+			TESTER_PORT := 'SF2'
+		),
+		(
+			JBOX_PORT := 'S33',
+			TESTER_PORT := 'J1'
+		),
+		(
+			JBOX_PORT := 'S34',
+			TESTER_PORT := 'J2'
+		),
+		(
+			JBOX_PORT := 'S25',
+			TESTER_PORT := 'J3'
+		),
+		(
+			JBOX_PORT := 'S26',
+			TESTER_PORT := 'J4'
+		),
+		(
+			JBOX_PORT := 'S27',
+			TESTER_PORT := 'J5'
+		),
+		(
+			JBOX_PORT := 'S28',
+			TESTER_PORT := 'J6'
+		),
+		(
+			JBOX_PORT := 'S29',
+			TESTER_PORT := 'J7'
+		),
+		(
+			JBOX_PORT := 'S30',
+			TESTER_PORT := 'J8'
+		),
+		(
+			JBOX_PORT := 'S1',
+			TESTER_PORT := 'J9'
+		),
+		(
+			JBOX_PORT := 'S35',
+			TESTER_PORT := 'J10'
+		),
+		(
+			JBOX_PORT := 'S3',
+			TESTER_PORT := 'J11'
+		),
+		(
+			JBOX_PORT := 'S5',
+			TESTER_PORT := 'J12'
+		),
+		(
+			JBOX_PORT := 'S8',
+			TESTER_PORT := 'J13'
+		),
+		(
+			JBOX_PORT := 'S10',
+			TESTER_PORT := 'J14'
+		),
+		(
+			JBOX_PORT := 'S21',
+			TESTER_PORT := 'J15'
+		),
+		(
+			JBOX_PORT := 'S22',
+			TESTER_PORT := 'J16'
+		),
+		(
+			JBOX_PORT := 'S23',
+			TESTER_PORT := 'J17'
+		),
+		(
+			JBOX_PORT := 'S24',
+			TESTER_PORT := 'J18'
+		),
+		(
+			JBOX_PORT := 'S4',
+			TESTER_PORT := 'J19'
+		),
+		(
+			JBOX_PORT := 'S6',
+			TESTER_PORT := 'J20'
+		),
+		(
+			JBOX_PORT := 'S9',
+			TESTER_PORT := 'J21'
+		),
+		(
+			JBOX_PORT := 'S11',
+			TESTER_PORT := 'J22'
+		),
+		(
+			JBOX_PORT := 'S13',
+			TESTER_PORT := 'J23'
+		),
+		(
+			JBOX_PORT := 'S14',
+			TESTER_PORT := 'J24'
+		),
+		(
+			JBOX_PORT := 'S15',
+			TESTER_PORT := 'J25'
+		),
+		(
+			JBOX_PORT := 'S16',
+			TESTER_PORT := 'J26'
+		),
+		(
+			JBOX_PORT := 'J36',
+			TESTER_PORT := 'S17'
+		),
+		(
+			JBOX_PORT := 'J38',
+			TESTER_PORT := 'S18'
+		)
+		];
+
+
+	
+	
+	
+	
+	
+	//
+	//
+	//
+
+	ACTIVE_HMI_VIEW_STRING : STRING(50);
+	
+	ACTIVE_HMI_VIEW : INT := 0;
+	
+	HMI_HOME_CONFIRM_CONNECTIONS : BOOL;
+	
+	HMI_SECTION1_480V_FLASHING : BOOL;
+	
+	HMI_SECTION1_480V_NOT_FLASHING : BOOL;
+	
+	HMI_SECTION1_120V_FLASHING : BOOL;
+	
+	HMI_SECTION1_120V_NOT_FLASHING : BOOL;
+	
+	HMI_SECTION1_PREP_COMPLETED : BOOL;
+
+	HMI_SECTION1_BEGIN_AUTOMATED : BOOL;
+	
+	HMI_SECTION2_PREP_COMPLETE : BOOL;
+	
+	HMI_SECTION2_BEGIN_AUTOMATED : BOOL;
+	
+	HMI_RESET_JBOX_TEST : BOOL;
+
+	HMI_ABORT_TEST : BOOL;
+	
+	(*
+	HMI_HOME_ACTIVE 			: STRING(10) := 'Hidden';
+    HMI_PREP_SECTION1_ACTIVE 	: STRING(10) := 'Hidden';
+    HMI_SECTION1_ACTIVE 		: STRING(10) := 'Hidden';
+    HMI_PREP_SECTION2_ACTIVE 	: STRING(10) := 'Hidden';
+    HMI_SECTION2_ACTIVE 		: STRING(10) := 'Hidden';
+    HMI_SECTION999_ACTIVE 		: STRING(10) := 'Hidden';
+	*)
+	(*
+	HMI_HOME_ACTIVE 			: BOOL := FALSE;
+    HMI_PREP_SECTION1_ACTIVE 	: BOOL := FALSE;
+    HMI_SECTION1_ACTIVE 		: BOOL := FALSE;
+    HMI_PREP_SECTION2_ACTIVE 	: BOOL := FALSE;
+    HMI_SECTION2_ACTIVE 		: BOOL := FALSE;
+    HMI_SECTION999_ACTIVE 		: BOOL := FALSE;
+	*)
+	
+
+
+	
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

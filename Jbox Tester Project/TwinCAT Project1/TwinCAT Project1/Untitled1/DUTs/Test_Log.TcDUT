@@ -5,7 +5,7 @@
 STRUCT
 	Index : INT;
 	Description : STRING(255);
-	Result : BOOL;
+	Result : STRING(10);
 END_STRUCT
 END_TYPE
 ]]></Declaration>

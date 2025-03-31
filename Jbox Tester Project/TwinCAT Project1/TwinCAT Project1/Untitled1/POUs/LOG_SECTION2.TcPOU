@@ -10,12 +10,17 @@ VAR
 	start_index : INT;
 	end_index : INT;
 END_VAR
+VAR_OUTPUT
+	Done : BOOL;
+END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[start_index := GVL_LOGS.NUM_TESTS_LOGGED;
+      <ST><![CDATA[Done := FALSE;
+
+start_index := GVL_LOGS.NUM_TESTS_LOGGED;
 end_index := start_index + CONSTANTS.SECTION2_NUM_DIG_TESTS-1;
 
-// SECTION 3 DIGITAL INPUTS
+// SECTION 2 DIGITAL INPUTS
 FOR i := start_index TO end_index DO
 	j := i - start_index;
 	GVL_LOGS.TEST_RESULTS_ARRAY[i].DESCRIPTION := GVL_IO_STRUCTS.IO_MAP_SECTION2_DIG[j].DESCRIPTION;
@@ -24,15 +29,9 @@ FOR i := start_index TO end_index DO
 	GVL_LOGS.NUM_TESTS_LOGGED := GVL_LOGS.NUM_TESTS_LOGGED + 1;
 END_FOR
 
+Done := TRUE;
+
 ]]></ST>
     </Implementation>
-    <LineIds Name="LOG_SECTION2">
-      <LineId Id="10" Count="0" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="11" Count="2" />
-      <LineId Id="22" Count="0" />
-      <LineId Id="14" Count="5" />
-      <LineId Id="7" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

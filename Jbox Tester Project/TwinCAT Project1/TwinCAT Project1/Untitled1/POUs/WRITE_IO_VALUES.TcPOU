@@ -59,20 +59,5 @@ GVL_IO_STRUCTS.LIGHT_24V_Us_2.LIVE_BOOL := GVL_IO.C5_P5;
 GVL_IO_STRUCTS.LIGHT_24V_Up_2.LIVE_BOOL := GVL_IO.C5_P6;
 *)]]></ST>
     </Implementation>
-    <LineIds Name="WRITE_IO_VALUES">
-      <LineId Id="8" Count="0" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="112" Count="0" />
-      <LineId Id="66" Count="0" />
-      <LineId Id="116" Count="0" />
-      <LineId Id="74" Count="0" />
-      <LineId Id="67" Count="0" />
-      <LineId Id="118" Count="11" />
-      <LineId Id="114" Count="0" />
-      <LineId Id="113" Count="0" />
-      <LineId Id="68" Count="0" />
-      <LineId Id="78" Count="25" />
-      <LineId Id="63" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

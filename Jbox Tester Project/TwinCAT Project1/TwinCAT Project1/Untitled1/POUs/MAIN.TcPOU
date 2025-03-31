@@ -7,109 +7,84 @@ END_VAR
 VAR
 	ExecuteSection1 : FB_EXECUTE_SECTION1;
 	ExecuteSection2 : FB_EXECUTE_SECTION2;
-	ActiveTestStage : INT := 0;
-	tDelay : TON;
-    bDelayDone : BOOL;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
+IF GVL_HMI.HMI_ABORT_TEST THEN
+	UNINITIALIZE();
+END_IF
 
-CASE ActiveTestStage OF
+CASE GVL_HMI.ACTIVE_HMI_VIEW OF
+  0: GVL_HMI.ACTIVE_HMI_VIEW_STRING := 'Home_Page.content';
+  1: GVL_HMI.ACTIVE_HMI_VIEW_STRING := 'Section_1.content';
+  2: GVL_HMI.ACTIVE_HMI_VIEW_STRING := 'Section_2.content';
+  3: GVL_HMI.ACTIVE_HMI_VIEW_STRING := 'Results_Page.content';
+  ELSE GVL_HMI.ACTIVE_HMI_VIEW_STRING := 'Home_Page.content';  // default
+END_CASE;
+
+CASE GVL_HMI.ACTIVE_HMI_VIEW OF
 	
 	0: // Idle
-		GVL.GO_HOME := TRUE;
-		IF GVL.HMI_BEGIN_TEST THEN
-			// user pressed "BEGIN Test"
-			ActiveTestStage := 1;
-			GVL.HMI_BEGIN_TEST := FALSE;
-		END_IF
 	
+		Initialize();
+		Update_HMI();
 		
+		IF GVL_HMI.HMI_HOME_CONFIRM_CONNECTIONS THEN
+			GVL_HMI.ACTIVE_HMI_VIEW := 1;
+			Update_HMI();
+		END_IF
 		
 	1: 
-		// Run Section1
-		WRITE_IO_VALUES();
-		ExecuteSection1(StartTest := TRUE);
-		
-		// Log Section1
-		IF ExecuteSection1.Done THEN
-			GVL.HMI_SECTION_1_COMPLETE := TRUE;
-			LOG_SECTION1();
-			ActiveTestStage := 2;
+		IF GVL_HMI.HMI_SECTION1_PREP_COMPLETED THEN
+			GVL_HMI.ACTIVE_HMI_VIEW := 2;
+			Update_HMI();
 		END_IF
 		
-	2: 
-		GVL.HMI_SECTION_2_INSTRUCTIONS := 'Open JBOX DOOR, PRESS ESTOP, PULL FIRE ALARM HANDLE';
-		IF GVL.HMI_BEGIN_SECTION_2 THEN
-			HMI_BEGIN_SECTION_2 := FALSE;
+	2:
+		
+		IF GVL_HMI.HMI_SECTION1_BEGIN_AUTOMATED THEN
 			WRITE_IO_VALUES();
-			ExecuteSection2(StartTest := TRUE);
-			IF ExecuteSection2.Done THEN
-				GVL.HMI_SECTION_2_COMPLETE := TRUE;
-				LOG_SECTION2();
-				ActiveTestStage := 999;
+			ExecuteSection1(StartTest := TRUE);
+			IF ExecuteSection1.Done THEN
+				LOG_SECTION1();
+
+				Update_HMI();
+				GVL_HMI.ACTIVE_HMI_VIEW := 3;
+
+			END_IF
+
+		END_IF
+		
+	3:
+		IF GVL_HMI.HMI_SECTION2_PREP_COMPLETE THEN
+			GVL_HMI.ACTIVE_HMI_VIEW := 4;
+			Update_HMI();
+		END_IF
+		
+	4: 
+		IF GVL_HMI.HMI_SECTION2_BEGIN_AUTOMATED THEN
+			IF WRITE_IO_VALUES() THEN
+				ExecuteSection2(StartTest := TRUE);
+				IF ExecuteSection2.Done THEN
+					LOG_SECTION2();
+
+					Update_HMI();
+					GVL_HMI.ACTIVE_HMI_VIEW := 5;
+				END_IF
 			END_IF
 		END_IF
 		
-	999: // Test done
-		GVL.TESTING_PROGRAM_COMPLETE := TRUE;
+	5: // Test done
+		IF GVL_HMI.HMI_RESET_JBOX_TEST THEN
+			UNINITIALIZE();
+		END_IF
 
 		
 		
 END_CASE
-
-IF GVL.HMI_RESET_TEST THEN
-    GVL.ABORT_SUCCESSFUL := UNINITIALIZE();
-	tDelay(IN := TRUE, PT := T#3S);
-	
-	bDelayDone := tDelay.Q;
-	IF bDelayDone THEN
-		GVL.ABORT_SUCCESSFUL := FALSE;
-    	GVL.HMI_RESET_TEST := FALSE;
-		ActiveTestStage := 0;
-	END_IF;
-	
-
-END_IF]]></ST>
+]]></ST>
     </Implementation>
-    <LineIds Name="MAIN">
-      <LineId Id="3" Count="4" />
-      <LineId Id="188" Count="0" />
-      <LineId Id="8" Count="1" />
-      <LineId Id="11" Count="6" />
-      <LineId Id="135" Count="0" />
-      <LineId Id="119" Count="0" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="136" Count="0" />
-      <LineId Id="130" Count="0" />
-      <LineId Id="45" Count="0" />
-      <LineId Id="163" Count="0" />
-      <LineId Id="123" Count="0" />
-      <LineId Id="46" Count="5" />
-      <LineId Id="53" Count="0" />
-      <LineId Id="157" Count="1" />
-      <LineId Id="160" Count="0" />
-      <LineId Id="164" Count="0" />
-      <LineId Id="161" Count="1" />
-      <LineId Id="159" Count="0" />
-      <LineId Id="54" Count="3" />
-      <LineId Id="88" Count="0" />
-      <LineId Id="94" Count="1" />
-      <LineId Id="2" Count="0" />
-      <LineId Id="166" Count="1" />
-      <LineId Id="169" Count="0" />
-      <LineId Id="178" Count="0" />
-      <LineId Id="186" Count="0" />
-      <LineId Id="180" Count="0" />
-      <LineId Id="182" Count="0" />
-      <LineId Id="187" Count="0" />
-      <LineId Id="184" Count="0" />
-      <LineId Id="183" Count="0" />
-      <LineId Id="179" Count="0" />
-      <LineId Id="172" Count="0" />
-      <LineId Id="171" Count="0" />
-      <LineId Id="165" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

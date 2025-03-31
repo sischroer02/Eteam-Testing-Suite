@@ -79,264 +79,185 @@
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>GVL.SF1</Name>
-							<Comment><![CDATA[ Mine Phone Continuity SF1 (1008 (2) port 8) ]]></Comment>
+							<Name>GVL_IO.JB_1914_Us</Name>
+							<Comment><![CDATA[8.0 : BOOL; (*INDEX 1 JBOX 1914 Up Power *) // mapping is likely wrong]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.SF2</Name>
-							<Comment><![CDATA[ Mine Phone Continuity SF2 (1008 (2) port 7) ]]></Comment>
+							<Name>GVL_IO.JB_1914_Up</Name>
+							<Comment><![CDATA[8.1 : BOOL; (*INDEX 2 JBOX 1914 Us Power *) // mapping is likely wrong]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.SF6</Name>
-							<Comment><![CDATA[ MGT Continuity SF6 (1008 (3) port 1) ]]></Comment>
+							<Name>GVL_IO.C3_P1</Name>
+							<Comment><![CDATA[4.0 : BOOL; (*INDEX 3 Fire pull Station SF4 (1008 (1) port 1) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.SF8</Name>
-							<Comment><![CDATA[ MGT Continuity SF8 (1008 (3) port 2) ]]></Comment>
+							<Name>GVL_IO.C3_P2</Name>
+							<Comment><![CDATA[14.1 : BOOL; (*INDEX 4 24V PWR Check J7 (4) (1008 (1) port 2) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.SF4</Name>
-							<Comment><![CDATA[ Fire pull Station SF4 (1008 (1) port 1) ]]></Comment>
+							<Name>GVL_IO.C3_P3</Name>
+							<Comment><![CDATA[4.2 : BOOL; (*INDEX 5 24V PWR Check J7 (5) (1008 (1) port 3) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J1_1</Name>
-							<Comment><![CDATA[ Lighting 24V Check J1 (1) (1008 (3) port 3) ]]></Comment>
+							<Name>GVL_IO.C3_P4</Name>
+							<Comment><![CDATA[14.3 : BOOL; (*INDEX 6 24V PWR Check J3 (1) (1008 (1) port 4) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J1_2</Name>
-							<Comment><![CDATA[ Lighting 24V Check J1 (2) (1008 (3) port 4) ]]></Comment>
+							<Name>GVL_IO.C3_P5</Name>
+							<Comment><![CDATA[4.4 : BOOL; (*INDEX 7 24V PWR Check J3 (2) (1008 (1) port 5) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J2_1</Name>
-							<Comment><![CDATA[ Lighting 24V Check J2 (1) (1008 (3) port 5) ]]></Comment>
+							<Name>GVL_IO.C3_P6</Name>
+							<Comment><![CDATA[4.5 : BOOL; (*INDEX 8 24V PWR Check J4 (1) (1008 (1) port 6) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J2_2</Name>
-							<Comment><![CDATA[ Lighting 24V Check J2 (2) (1008 (3) port 6) ]]></Comment>
+							<Name>GVL_IO.C3_P7</Name>
+							<Comment><![CDATA[4.7 : BOOL; (*INDEX 9 24V PWR Check J4 (2) (1008 (1) port 7) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J3_1</Name>
-							<Comment><![CDATA[ 24V PWR Check J3 (1) (1008 (1) port 4) ]]></Comment>
+							<Name>GVL_IO.C4_P1</Name>
+							<Comment><![CDATA[5.0 : BOOL; (*INDEX 10 24V PWR Check J5 (1) (1008 (2) port 1) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J3_2</Name>
-							<Comment><![CDATA[ 24V PWR Check J3 (2) (1008 (1) port 5) ]]></Comment>
+							<Name>GVL_IO.C4_P2</Name>
+							<Comment><![CDATA[5.1 : BOOL; (*INDEX 11 24V PWR Check J5 (2) (1008 (2) port 2) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J4_1</Name>
-							<Comment><![CDATA[ 24V PWR Check J4 (1) (1008 (1) port 6) ]]></Comment>
+							<Name>GVL_IO.C4_P3</Name>
+							<Comment><![CDATA[5.2 : BOOL; (*INDEX 12 24V PWR Check J6 (1) (1008 (2) port 3) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J4_2</Name>
-							<Comment><![CDATA[ 24V PWR Check J4 (2) (1008 (1) port 7) ]]></Comment>
+							<Name>GVL_IO.C4_P4</Name>
+							<Comment><![CDATA[5.3 : BOOL; (*INDEX 13 24V PWR Check J6 (2) (1008 (2) port 4) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J5_1</Name>
-							<Comment><![CDATA[ 24V PWR Check J5 (1) (1008 (2) port 1) ]]></Comment>
+							<Name>GVL_IO.C4_P5</Name>
+							<Comment><![CDATA[5.4 : BOOL; (*INDEX 14 24V PWR Check J8 (4) (1008 (2) port 5) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J5_2</Name>
-							<Comment><![CDATA[ 24V PWR Check J5 (2) (1008 (2) port 2) ]]></Comment>
+							<Name>GVL_IO.C4_P6</Name>
+							<Comment><![CDATA[5.5 : BOOL; (*INDEX 15 24V PWR Check J8 (5) (1008 (2) port 6) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J6_1</Name>
-							<Comment><![CDATA[ 24V PWR Check J6 (1) (1008 (2) port 3) ]]></Comment>
+							<Name>GVL_IO.C4_P7</Name>
+							<Comment><![CDATA[5.6 : BOOL; (*INDEX 16 Mine Phone Continuity SF2 (1008 (2) port 7) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J6_2</Name>
-							<Comment><![CDATA[ 24V PWR Check J6 (2) (1008 (2) port 4) ]]></Comment>
+							<Name>GVL_IO.C4_P8</Name>
+							<Comment><![CDATA[5.7 : BOOL; (*INDEX 17 Mine Phone Continuity SF1 (1008 (2) port 8) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J7_4</Name>
-							<Comment><![CDATA[ 24V PWR Check J7 (4) (1008 (1) port 2) ]]></Comment>
+							<Name>GVL_IO.C5_P1</Name>
+							<Comment><![CDATA[6.0 : BOOL; (*INDEX 18 MGT Continuity SF6 (1008 (3) port 1) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J7_5</Name>
-							<Comment><![CDATA[ 24V PWR Check J7 (5) (1008 (1) port 3) ]]></Comment>
+							<Name>GVL_IO.C5_P2</Name>
+							<Comment><![CDATA[6.1: BOOL; (*INDEX 19 MGT Continuity SF8 (1008 (3) port 2) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J8_4</Name>
-							<Comment><![CDATA[ 24V PWR Check J8 (4) (1008 (2) port 5) ]]></Comment>
+							<Name>GVL_IO.C5_P3</Name>
+							<Comment><![CDATA[6.2 : BOOL; (*INDEX 20 Lighting 24V Check J1 (1) (1008 (3) port 3) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.J8_5</Name>
-							<Comment><![CDATA[ 24V PWR Check J8 (5) (1008 (2) port 6) ]]></Comment>
+							<Name>GVL_IO.C5_P4</Name>
+							<Comment><![CDATA[6.3 : BOOL; (*INDEX 21 Lighting 24V Check J1 (2) (1008 (3) port 4) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.Door_Switch</Name>
-							<Comment><![CDATA[ Door Switch, Unknown Port ]]></Comment>
+							<Name>GVL_IO.C5_P5</Name>
+							<Comment><![CDATA[6.4 : BOOL; (*INDEX 22 Lighting 24V Check J2 (1) (1008 (3) port 5) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.Estop_Signal</Name>
-							<Comment><![CDATA[ Estop Signal, Unknown Port ]]></Comment>
+							<Name>GVL_IO.C5_P6</Name>
+							<Comment><![CDATA[6.5 : BOOL; (*INDEX 23 Lighting 24V Check J2 (2) (1008 (3) port 6) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.DCDC_Signal</Name>
-							<Comment><![CDATA[ DCDC Signal, Unknown Port ]]></Comment>
+							<Name>GVL_IO.PSU1_Stat</Name>
+							<Comment><![CDATA[8.2 : BOOL; (*INDEX 24 PSU1_OK/1.4B *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.Estop_Signal_Low</Name>
-							<Comment><![CDATA[ Estop Signal Low, Unknown Port ]]></Comment>
+							<Name>GVL_IO.PSU2_Stat</Name>
+							<Comment><![CDATA[8.3 : BOOL; (*INDEX 25 PSU2_OK/1.4E *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.DCDC_Signal_Low</Name>
-							<Comment><![CDATA[ DCDC Signal Low, Unknown Port ]]></Comment>
+							<Name>GVL_IO.PSU1_I</Name>
+							<Comment><![CDATA[10.0 : BOOL; (*INDEX 26 PSU1_IOUT/1.3B *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.DCDC_Calibration_Manual</Name>
-							<Comment><![CDATA[ DCDC Calibration Manual, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.DCDC_2_Signal</Name>
-							<Comment><![CDATA[ DCDC 2 Signal, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.DCDC_2_Signal_Low</Name>
-							<Comment><![CDATA[ DCDC 2 Signal Low, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.DCDC_2_Calibration_Manual</Name>
-							<Comment><![CDATA[ DCDC 2 Calibration Manual, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.PSU_1_Signal</Name>
-							<Comment><![CDATA[ PSU 1 Signal, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.PSU_1_Signal_Low</Name>
-							<Comment><![CDATA[ PS Low, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.PSU_2_Signal</Name>
-							<Comment><![CDATA[ PSU 2 Sigznal, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.PSU_2_Signal_Low</Name>
-							<Comment><![CDATA[ PSU 2 Signal Low, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Hear_Fire_Alarm_Manual</Name>
-							<Comment><![CDATA[ Hear Fire Alarm Manual, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Ping_address_1</Name>
-							<Comment><![CDATA[ Ping address 1, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Ping_address_2</Name>
-							<Comment><![CDATA[ Ping address 2, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Ping_address_3</Name>
-							<Comment><![CDATA[ Ping address 3, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.Ping_address_4</Name>
-							<Comment><![CDATA[ Ping address 4, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.grace_port_visible</Name>
-							<Comment><![CDATA[ grace port visible, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.indicator_120V_visible</Name>
-							<Comment><![CDATA[ 120V indicator visible, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.programmed_psu1_manual</Name>
-							<Comment><![CDATA[ programmed psu1 manual, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.programmed_psu2_manual</Name>
-							<Comment><![CDATA[ programmed psu2 manual, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.load_test_24V_psu1</Name>
-							<Comment><![CDATA[ 24v load test psu1, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.load_test_24V_psu2</Name>
-							<Comment><![CDATA[ 24v load test psu2, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.ecat_branch_test</Name>
-							<Comment><![CDATA[ ecat branch test, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.ecat_branch_test_2</Name>
-							<Comment><![CDATA[ ecat branch test 2, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.mine_phone_battery_manual</Name>
-							<Comment><![CDATA[ mine phone battery manual, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.ping_ips</Name>
-							<Comment><![CDATA[ ping ips, Unknown Port ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.gfci_test_manual</Name>
-							<Comment><![CDATA[ gfci test manual, Unknown Port ]]></Comment>
+							<Name>GVL_IO.PSU2_I</Name>
+							<Comment><![CDATA[10.1 : BOOL; (*INDEX 27 PSU2_IOUT/1.3E *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>GVL.SF5</Name>
-							<Comment><![CDATA[ Fire Alarm Sound SF5 (2024 port 2) ]]></Comment>
+							<Name>GVL_IO.C2_P2</Name>
+							<Comment><![CDATA[3.1 : BOOL; (*INDEX 0 Fire Alarm Sound SF5 (2024 port 2) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
+					<UnrestoredVarLinks ImportTime="2025-03-30T09:10:25">
+						<OwnerA Name="InputDst" Prefix="TIPC^Untitled1^Untitled1 Instance" Type="1">
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C3 (EL1018)">
+								<Link VarA="GVL.J3_1" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J3_2" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J4_1" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 6^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J4_2" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 7^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J7_4" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J7_5" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.SF4" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C4 (EL1018)">
+								<Link VarA="GVL.J5_1" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J5_2" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J6_1" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J6_2" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J8_4" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J8_5" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 6^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.SF1" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 8^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.SF2" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 7^Input" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C5 (EL1008)">
+								<Link VarA="GVL.J1_1" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J1_2" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J2_1" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.J2_2" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 6^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.SF6" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL.SF8" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+						<OwnerA Name="OutputSrc" Prefix="TIPC^Untitled1^Untitled1 Instance" Type="2">
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C2 (EL2014)">
+								<Link VarA="GVL.SF5" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DIG Outputs^Channel 1^Output" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
 					<Contexts>
 						<Context>
 							<Id NeedCalleeCall="true">0</Id>
@@ -383,10 +304,10 @@
 							<Entry Name="FSOE__FSoE Slave CMD" Index="#x6000" Sub="#x01">
 								<Type>USINT</Type>
 							</Entry>
-							<Entry Name="FSOE__InputChannel1" Index="#x6001" Sub="#x01">
+							<Entry Name="FSOE__InputChannel1" Index="#x6001" Sub="#x01" Flags="#x00008020">
 								<Type>BIT</Type>
 							</Entry>
-							<Entry Name="FSOE__InputChannel2" Index="#x6001" Sub="#x02">
+							<Entry Name="FSOE__InputChannel2" Index="#x6001" Sub="#x02" Flags="#x00008020">
 								<Type>BIT</Type>
 							</Entry>
 							<Entry Name="FSOE__">
@@ -581,7 +502,7 @@
 								<Entry Name="Channel 1__Output" Index="#x7000" Sub="#x01" Flags="#x00008020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Channel 2__Output" Index="#x7010" Sub="#x01">
+								<Entry Name="Channel 2__Output" Index="#x7010" Sub="#x01" Flags="#x00008020">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="Channel 3__Output" Index="#x7020" Sub="#x01">
@@ -1281,35 +1202,32 @@
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Untitled1^Untitled1 Instance">
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C2 (EL2014)">
-				<Link VarA="PlcTask Outputs^GVL.SF5" VarB="DIG Outputs^Channel 1^Output"/>
-			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C3 (EL1018)">
-				<Link VarA="PlcTask Inputs^GVL.J3_1" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J3_2" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J4_1" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J4_2" VarB="Channel 7^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J7_4" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J7_5" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.SF4" VarB="Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C3_P1" VarB="Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C3_P2" VarB="Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C3_P3" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C3_P4" VarB="Channel 4^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C3_P5" VarB="Channel 5^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C3_P6" VarB="Channel 6^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C3_P7" VarB="Channel 7^Input"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C4 (EL1018)">
-				<Link VarA="PlcTask Inputs^GVL.J5_1" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J5_2" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J6_1" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J6_2" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J8_4" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J8_5" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.SF1" VarB="Channel 8^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.SF2" VarB="Channel 7^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C4_P1" VarB="Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C4_P2" VarB="Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C4_P3" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C4_P4" VarB="Channel 4^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C4_P5" VarB="Channel 5^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C4_P6" VarB="Channel 6^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C4_P7" VarB="Channel 7^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C4_P8" VarB="Channel 8^Input"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C5 (EL1008)">
-				<Link VarA="PlcTask Inputs^GVL.J1_1" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J1_2" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J2_1" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.J2_2" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.SF6" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^GVL.SF8" VarB="Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C5_P1" VarB="Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C5_P2" VarB="Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C5_P3" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C5_P4" VarB="Channel 4^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C5_P5" VarB="Channel 5^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.C5_P6" VarB="Channel 6^Input"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

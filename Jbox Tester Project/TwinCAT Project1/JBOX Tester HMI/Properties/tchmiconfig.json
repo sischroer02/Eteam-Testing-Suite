@@ -2,7 +2,7 @@
   "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.12.756.1/runtimes/native1.12-tchmi/Schema/TchmiConfig.Schema.json",
   "basePath": "./framework",
   "scaleMode": "None",
-  "startupView": "Desktop.view",
+  "startupView": "View1.view",
   "loginPage": "",
   "tcHmiServer": {
     "websocketIntervalTime": 500,
@@ -51,40 +51,39 @@
     }
   ],
   "userControls": [],
-  "content": [],
+  "content": [
+    {
+      "url": "Home_Page.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Results_Page.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Section_1.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Section_2.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    }
+  ],
   "views": [
     {
-      "url": "Desktop.view",
-      "preload": false,
-      "keepAlive": false,
-      "preloadBindings": false
-    },
-    {
-      "url": "Home Screen.view",
-      "preload": false,
-      "keepAlive": false,
-      "preloadBindings": false
-    },
-    {
-      "url": "Section1.view",
-      "preload": false,
-      "keepAlive": false,
-      "preloadBindings": false
-    },
-    {
-      "url": "Section2.view",
-      "preload": false,
-      "keepAlive": false,
-      "preloadBindings": false
-    },
-    {
-      "url": "Section3.view",
-      "preload": false,
-      "keepAlive": false,
-      "preloadBindings": false
-    },
-    {
-      "url": "Section4.view",
+      "url": "View1.view",
       "preload": false,
       "keepAlive": false,
       "preloadBindings": false

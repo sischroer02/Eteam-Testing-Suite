@@ -50,6 +50,23 @@
             "minItems": 101,
             "type": "array"
         },
+        "PLC1.ARRAY_0..29_OF-Port_Map": {
+            "items": {
+                "$ref": "#/definitions/PLC1.Port_Map"
+            },
+            "maxItems": 30,
+            "minItems": 30,
+            "type": "array"
+        },
+        "PLC1.ARRAY_0..69_OF-Test_Log": {
+            "comment": "All JBOX Connectors are Plugged In, Door Closed, Estop Depressed, Fire Alarm Nominal",
+            "items": {
+                "$ref": "#/definitions/PLC1.Test_Log"
+            },
+            "maxItems": 70,
+            "minItems": 70,
+            "type": "array"
+        },
         "PLC1.Datastructure1": {
             "properties": {
                 "Name": {
@@ -61,6 +78,52 @@
                             "$ref": "tchmi:general#/definitions/String"
                         }
                     ]
+                },
+                "Result": {
+                    "$ref": "tchmi:general#/definitions/BOOL"
+                }
+            },
+            "type": "object"
+        },
+        "PLC1.Port_Map": {
+            "properties": {
+                "JBOX_PORT": {
+                    "allOf": [
+                        {
+                            "maxLength": 5
+                        },
+                        {
+                            "$ref": "tchmi:general#/definitions/String"
+                        }
+                    ]
+                },
+                "TESTER_PORT": {
+                    "allOf": [
+                        {
+                            "maxLength": 5
+                        },
+                        {
+                            "$ref": "tchmi:general#/definitions/String"
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "PLC1.Test_Log": {
+            "properties": {
+                "Description": {
+                    "allOf": [
+                        {
+                            "maxLength": 255
+                        },
+                        {
+                            "$ref": "tchmi:general#/definitions/String"
+                        }
+                    ]
+                },
+                "Index": {
+                    "$ref": "tchmi:general#/definitions/INT"
                 },
                 "Result": {
                     "$ref": "tchmi:general#/definitions/BOOL"
@@ -911,23 +974,6 @@
             "OPTIONS": {},
             "SCHEMA": {
                 "function": true
-            },
-            "USEMAPPING": true
-        },
-        "ADS.PLC1.GVL.TestResults.0": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL::TestResults[0]",
-            "SCHEMA": {
-                "allOf": [
-                    {
-                        "maxLength": 255
-                    },
-                    {
-                        "$ref": "tchmi:general#/definitions/String"
-                    }
-                ]
             },
             "USEMAPPING": true
         },
@@ -2380,81 +2426,30 @@
             },
             "USEMAPPING": true
         },
-        "PLC1.GVL.TestResults": {
+        "PLC1.GVL_HMI.ACTIVE_HMI_VIEW_STRING": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL::TestResults",
-            "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.ARRAY_0..100_OF-Datastructure1"
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.GVL.bEndTest": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL::bEndTest",
+            "MAPPING": "PLC1::GVL_HMI::ACTIVE_HMI_VIEW_STRING",
             "SCHEMA": {
                 "allOf": [
                     {
-                        "$ref": "tchmi:general#/definitions/BOOL"
+                        "maxLength": 50
                     },
                     {
-                        "comment": "user toggles to end without logging once plc sections are done"
+                        "$ref": "tchmi:general#/definitions/String"
                     }
                 ]
             },
             "USEMAPPING": true
         },
-        "PLC1.GVL.bNextStep": {
+        "PLC1.GVL_HMI.HMI_HOME_CONFIRM_CONNECTIONS": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL::bNextStep",
+            "MAPPING": "PLC1::GVL_HMI::HMI_HOME_CONFIRM_CONNECTIONS",
             "SCHEMA": {
-                "allOf": [
-                    {
-                        "$ref": "tchmi:general#/definitions/BOOL"
-                    },
-                    {
-                        "comment": "user toggles or clicks for next step"
-                    }
-                ]
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.GVL.bStartTest": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL::bStartTest",
-            "SCHEMA": {
-                "allOf": [
-                    {
-                        "$ref": "tchmi:general#/definitions/BOOL"
-                    },
-                    {
-                        "comment": "user toggles to start"
-                    }
-                ]
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.GVL.bWriteLog": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL::bWriteLog",
-            "SCHEMA": {
-                "allOf": [
-                    {
-                        "$ref": "tchmi:general#/definitions/BOOL"
-                    },
-                    {
-                        "comment": "user toggles to generate final log"
-                    }
-                ]
+                "$ref": "tchmi:general#/definitions/BOOL"
             },
             "USEMAPPING": true
         },
@@ -3305,6 +3300,25 @@
                 "PLC1.GVL.bNextStep": 3,
                 "PLC1.GVL.bStartTest": 3,
                 "PLC1.GVL.bWriteLog": 3,
+                "PLC1.GVL_HMI.ACTIVE_HMI_VIEW_STRING": 3,
+                "PLC1.GVL_HMI.HMI_ABORT_TEST": 3,
+                "PLC1.GVL_HMI.HMI_HOME_ACTIVE": 3,
+                "PLC1.GVL_HMI.HMI_HOME_CONFIRM_CONNECTIONS": 3,
+                "PLC1.GVL_HMI.HMI_PREP_SECTION1_ACTIVE": 3,
+                "PLC1.GVL_HMI.HMI_PREP_SECTION2_ACTIVE": 3,
+                "PLC1.GVL_HMI.HMI_RESET_JBOX_TEST": 3,
+                "PLC1.GVL_HMI.HMI_SECTION1_ACTIVE": 3,
+                "PLC1.GVL_HMI.HMI_SECTION1_BEGIN_AUTOMATED": 3,
+                "PLC1.GVL_HMI.HMI_SECTION1_PREP_COMPLETED": 3,
+                "PLC1.GVL_HMI.HMI_SECTION2_ACTIVE": 3,
+                "PLC1.GVL_HMI.HMI_SECTION2_BEGIN_AUTOMATED": 3,
+                "PLC1.GVL_HMI.HMI_SECTION2_PREP_COMPLETE": 3,
+                "PLC1.GVL_HMI.HMI_SECTION999_ACTIVE": 3,
+                "PLC1.GVL_HMI.JBOX_TEST_PORT_MAP": 3,
+                "PLC1.GVL_IO_STRUCTS.IO_MAP_SECTION1_DIG.21.LIVE_BOOL": 3,
+                "PLC1.GVL_IO_STRUCTS.IO_MAP_SECTION1_DIG.22.LIVE_BOOL": 3,
+                "PLC1.GVL_IO_STRUCTS.JBOX_TEST_PORT_MAP": 3,
+                "PLC1.GVL_LOGS.TEST_RESULTS_ARRAY": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
                 "TcHmiSqliteLogger.Diagnostics": 1,

@@ -21,7 +21,7 @@
     <TargetFramework>native1.12-tchmi</TargetFramework>
     <AzureFunctionsVersion>v2</AzureFunctionsVersion>
     <Name>JBOX Tester HMI</Name>
-    <HmiCommunicationRouterPort>10104</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10107</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13000</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.756.1</HmiInitial>
     <HmiRecent>1.12.756.1</HmiRecent>
@@ -113,19 +113,22 @@
   <Target Name="Clean" DependsOnTargets="$(CleanDependsOn)" />
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <ItemGroup>
-    <Content Include="Home Screen.view">
+    <Content Include="Home_Page.content">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Section1.view">
+    <Content Include="Images\JBOX_PIC.png">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Section2.view">
+    <Content Include="Results_Page.content">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Section4.view">
+    <Content Include="Section_1.content">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Section3.view">
+    <Content Include="Section_2.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="View1.view">
       <SubType>Content</SubType>
     </Content>
     <Folder Include="Fonts\" />
@@ -136,6 +139,7 @@
     <Folder Include="Imports\Videos" />
     <Folder Include="KeyboardLayouts\" />
     <Folder Include="Localization" />
+    <Folder Include="Content" />
     <Folder Include="Themes" />
     <Folder Include="Themes\Base-Dark\Images\" />
     <Folder Include="Themes\Base\" />
@@ -344,10 +348,6 @@
       <Visible>true</Visible>
     </Content>
     <Content Include="Images\Manifest\launcher-icon-4x.png">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Desktop.view">
       <SubType>Content</SubType>
       <Visible>true</Visible>
     </Content>

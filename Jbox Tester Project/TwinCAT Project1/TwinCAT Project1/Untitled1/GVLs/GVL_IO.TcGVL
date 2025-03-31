@@ -10,39 +10,39 @@ VAR_GLOBAL
 	
 	
 
-	C2_P2 AT%Q3.1 : BOOL; (*INDEX 0 Fire Alarm Sound SF5 (2024 port 2) *)
+	C2_P2 AT%Q* : BOOL; //3.1 : BOOL; (*INDEX 0 Fire Alarm Sound SF5 (2024 port 2) *)
 
-	JB_1914_Us AT%I8.0 : BOOL; (*INDEX 1 JBOX 1914 Up Power *) // mapping is likely wrong
-	JB_1914_Up AT%I8.1 : BOOL; (*INDEX 2 JBOX 1914 Us Power *) // mapping is likely wrong
-	C3_P1 AT%I4.0 : BOOL; (*INDEX 3 Fire pull Station SF4 (1008 (1) port 1) *)
-	C3_P2 AT%I14.1 : BOOL; (*INDEX 4 24V PWR Check J7 (4) (1008 (1) port 2) *)
-    C3_P3 AT%I4.2 : BOOL; (*INDEX 5 24V PWR Check J7 (5) (1008 (1) port 3) *)
-	C3_P4 AT%I14.3 : BOOL; (*INDEX 6 24V PWR Check J3 (1) (1008 (1) port 4) *)
-	C3_P5 AT%I4.4 : BOOL; (*INDEX 7 24V PWR Check J3 (2) (1008 (1) port 5) *)
-    C3_P6 AT%I4.5 : BOOL; (*INDEX 8 24V PWR Check J4 (1) (1008 (1) port 6) *)
+	JB_1914_Us AT%I* : BOOL; //8.0 : BOOL; (*INDEX 1 JBOX 1914 Up Power *) // mapping is likely wrong
+	JB_1914_Up AT%I* : BOOL; //8.1 : BOOL; (*INDEX 2 JBOX 1914 Us Power *) // mapping is likely wrong
+	C3_P1 AT%I* : BOOL; //4.0 : BOOL; (*INDEX 3 Fire pull Station SF4 (1008 (1) port 1) *)
+	C3_P2 AT%I* : BOOL; //14.1 : BOOL; (*INDEX 4 24V PWR Check J7 (4) (1008 (1) port 2) *)
+    C3_P3 AT%I* : BOOL; //4.2 : BOOL; (*INDEX 5 24V PWR Check J7 (5) (1008 (1) port 3) *)
+	C3_P4 AT%I* : BOOL; //14.3 : BOOL; (*INDEX 6 24V PWR Check J3 (1) (1008 (1) port 4) *)
+	C3_P5 AT%I* : BOOL; //4.4 : BOOL; (*INDEX 7 24V PWR Check J3 (2) (1008 (1) port 5) *)
+    C3_P6 AT%I* : BOOL; //4.5 : BOOL; (*INDEX 8 24V PWR Check J4 (1) (1008 (1) port 6) *)
 	
-    C3_P7 AT%I4.7 : BOOL; (*INDEX 9 24V PWR Check J4 (2) (1008 (1) port 7) *)
-    C4_P1 AT%I5.0 : BOOL; (*INDEX 10 24V PWR Check J5 (1) (1008 (2) port 1) *)
-    C4_P2 AT%I5.1 : BOOL; (*INDEX 11 24V PWR Check J5 (2) (1008 (2) port 2) *)
-    C4_P3 AT%I5.2 : BOOL; (*INDEX 12 24V PWR Check J6 (1) (1008 (2) port 3) *)
-    C4_P4 AT%I5.3 : BOOL; (*INDEX 13 24V PWR Check J6 (2) (1008 (2) port 4) *)
-    C4_P5 AT%I5.4 : BOOL; (*INDEX 14 24V PWR Check J8 (4) (1008 (2) port 5) *)
-    C4_P6 AT%I5.5 : BOOL; (*INDEX 15 24V PWR Check J8 (5) (1008 (2) port 6) *)
+    C3_P7 AT%I* : BOOL; //4.7 : BOOL; (*INDEX 9 24V PWR Check J4 (2) (1008 (1) port 7) *)
+    C4_P1 AT%I* : BOOL; //5.0 : BOOL; (*INDEX 10 24V PWR Check J5 (1) (1008 (2) port 1) *)
+    C4_P2 AT%I* : BOOL; //5.1 : BOOL; (*INDEX 11 24V PWR Check J5 (2) (1008 (2) port 2) *)
+    C4_P3 AT%I* : BOOL; //5.2 : BOOL; (*INDEX 12 24V PWR Check J6 (1) (1008 (2) port 3) *)
+    C4_P4 AT%I* : BOOL; //5.3 : BOOL; (*INDEX 13 24V PWR Check J6 (2) (1008 (2) port 4) *)
+    C4_P5 AT%I* : BOOL; //5.4 : BOOL; (*INDEX 14 24V PWR Check J8 (4) (1008 (2) port 5) *)
+    C4_P6 AT%I* : BOOL; //5.5 : BOOL; (*INDEX 15 24V PWR Check J8 (5) (1008 (2) port 6) *)
 	
-	C4_P7 AT%I5.6 : BOOL; (*INDEX 16 Mine Phone Continuity SF2 (1008 (2) port 7) *)
-	C4_P8 AT%I5.7 : BOOL; (*INDEX 17 Mine Phone Continuity SF1 (1008 (2) port 8) *)
-	C5_P1 AT%I6.0 : BOOL; (*INDEX 18 MGT Continuity SF6 (1008 (3) port 1) *)
-	C5_P2 AT%I6.1: BOOL; (*INDEX 19 MGT Continuity SF8 (1008 (3) port 2) *)
-	C5_P3 AT%I6.2 : BOOL; (*INDEX 20 Lighting 24V Check J1 (1) (1008 (3) port 3) *)
-	C5_P4 AT%I6.3 : BOOL; (*INDEX 21 Lighting 24V Check J1 (2) (1008 (3) port 4) *)
-	C5_P5 AT%I6.4 : BOOL; (*INDEX 22 Lighting 24V Check J2 (1) (1008 (3) port 5) *)
-	C5_P6 AT%I6.5 : BOOL; (*INDEX 23 Lighting 24V Check J2 (2) (1008 (3) port 6) *)
+	C4_P7 AT%I* : BOOL; //5.6 : BOOL; (*INDEX 16 Mine Phone Continuity SF2 (1008 (2) port 7) *)
+	C4_P8 AT%I* : BOOL; //5.7 : BOOL; (*INDEX 17 Mine Phone Continuity SF1 (1008 (2) port 8) *)
+	C5_P1 AT%I* : BOOL; //6.0 : BOOL; (*INDEX 18 MGT Continuity SF6 (1008 (3) port 1) *)
+	C5_P2 AT%I* : BOOL; //6.1: BOOL; (*INDEX 19 MGT Continuity SF8 (1008 (3) port 2) *)
+	C5_P3 AT%I* : BOOL; //6.2 : BOOL; (*INDEX 20 Lighting 24V Check J1 (1) (1008 (3) port 3) *)
+	C5_P4 AT%I* : BOOL; //6.3 : BOOL; (*INDEX 21 Lighting 24V Check J1 (2) (1008 (3) port 4) *)
+	C5_P5 AT%I* : BOOL; //6.4 : BOOL; (*INDEX 22 Lighting 24V Check J2 (1) (1008 (3) port 5) *)
+	C5_P6 AT%I* : BOOL; //6.5 : BOOL; (*INDEX 23 Lighting 24V Check J2 (2) (1008 (3) port 6) *)
 	
-	PSU1_Stat AT%I8.2 : BOOL; (*INDEX 24 PSU1_OK/1.4B *)
-	PSU2_Stat AT%I8.3 : BOOL; (*INDEX 25 PSU2_OK/1.4E *)
+	PSU1_Stat AT%I* : BOOL; //8.2 : BOOL; (*INDEX 24 PSU1_OK/1.4B *)
+	PSU2_Stat AT%I* : BOOL; //8.3 : BOOL; (*INDEX 25 PSU2_OK/1.4E *)
 	
-    PSU1_I AT%I10.0 : BOOL; (*INDEX 26 PSU1_IOUT/1.3B *)
-    PSU2_I AT%I10.1 : BOOL; (*INDEX 27 PSU2_IOUT/1.3E *)
+    PSU1_I AT%I* : BOOL; //10.0 : BOOL; (*INDEX 26 PSU1_IOUT/1.3B *)
+    PSU2_I AT%I* : BOOL; //10.1 : BOOL; (*INDEX 27 PSU2_IOUT/1.3E *)
 	
 	// MAYBE BADDD JBC0_P2 AT%I45.0 : BOOL; (* DCDC_OK/1.6C *)
     

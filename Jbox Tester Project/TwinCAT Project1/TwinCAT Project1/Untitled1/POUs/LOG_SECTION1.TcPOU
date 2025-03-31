@@ -7,28 +7,42 @@ END_VAR
 VAR
 	i : INT;
 	j : INT;
-	start_index : INT;
-	end_index : INT;
+	dig_start_index : INT;
+	dig_end_index : INT;
+	
+	hmi_start_index : INT;
+	hmi_end_index : INT;
+	
+	Done : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[start_index := GVL_LOGS.NUM_TESTS_LOGGED;
-end_index := start_index + CONSTANTS.SECTION1_NUM_DIG_TESTS-1;
+      <ST><![CDATA[Done := FALSE;
 
-// SECTION 3 DIGITAL INPUTS
-FOR i := start_index TO end_index DO
-	j := i - start_index;
+dig_start_index := GVL_LOGS.NUM_TESTS_LOGGED;
+dig_end_index := dig_start_index + CONSTANTS.SECTION1_NUM_DIG_TESTS-1;
+
+// SECTION 1 DIGITAL INPUTS
+FOR i := dig_start_index TO dig_end_index DO
+	j := i - dig_start_index;
 	GVL_LOGS.TEST_RESULTS_ARRAY[i].DESCRIPTION := GVL_IO_STRUCTS.IO_MAP_SECTION1_DIG[j].DESCRIPTION;
 	GVL_LOGS.TEST_RESULTS_ARRAY[i].INDEX := i;
 	GVL_LOGS.TEST_RESULTS_ARRAY[i].RESULT := GVL_IO_STRUCTS.IO_MAP_SECTION1_DIG[j].RESULT;
 	GVL_LOGS.NUM_TESTS_LOGGED := GVL_LOGS.NUM_TESTS_LOGGED + 1;
 END_FOR
 
-]]></ST>
+hmi_start_index := GVL_LOGS.NUM_TESTS_LOGGED;
+hmi_end_index := hmi_start_index + CONSTANTS.SECTION1_NUM_HMI_TESTS-1;
+
+FOR i := hmi_start_index TO hmi_end_index DO
+	j := i - hmi_start_index;
+	GVL_LOGS.TEST_RESULTS_ARRAY[i].DESCRIPTION := GVL_IO_STRUCTS.IO_MAP_SECTION1_HMI[j].DESCRIPTION;
+	GVL_LOGS.TEST_RESULTS_ARRAY[i].INDEX := i;
+	GVL_LOGS.TEST_RESULTS_ARRAY[i].RESULT := GVL_IO_STRUCTS.IO_MAP_SECTION1_HMI[j].RESULT;
+	GVL_LOGS.NUM_TESTS_LOGGED := GVL_LOGS.NUM_TESTS_LOGGED + 1;
+END_FOR
+
+Done := TRUE;]]></ST>
     </Implementation>
-    <LineIds Name="LOG_SECTION1">
-      <LineId Id="54" Count="11" />
-      <LineId Id="17" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
