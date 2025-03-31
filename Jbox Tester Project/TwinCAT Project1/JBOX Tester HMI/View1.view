@@ -7,7 +7,7 @@
      data-tchmi-min-height="100" data-tchmi-min-height-unit="%"
      data-tchmi-background-image-height="100" data-tchmi-background-image-width="100"
      data-tchmi-background-image-height-unit="%" data-tchmi-background-image-width-unit="%" data-tchmi-is-enabled="true">
-<div id="TcHmiRegion" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="500" data-tchmi-height-unit="px" data-tchmi-left="48" data-tchmi-left-unit="px" data-tchmi-top="49" data-tchmi-top-unit="px" data-tchmi-width="500" data-tchmi-width-unit="px" data-tchmi-is-enabled="true" data-tchmi-target-content="%s%PLC1.GVL_HMI.ACTIVE_HMI_VIEW_STRING%/s%">
+<div id="TcHmiRegion" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="3285" data-tchmi-height-unit="px" data-tchmi-left="34" data-tchmi-left-unit="px" data-tchmi-top="40" data-tchmi-top-unit="px" data-tchmi-width="2414" data-tchmi-width-unit="px" data-tchmi-is-enabled="true" data-tchmi-target-content="%s%PLC1.GVL_HMI.ACTIVE_HMI_VIEW_STRING%/s%">
 
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [

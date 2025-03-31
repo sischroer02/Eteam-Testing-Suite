@@ -50,12 +50,61 @@
             "minItems": 101,
             "type": "array"
         },
+        "PLC1.ARRAY_0..149_OF-Test_Log": {
+            "comment": "All JBOX Connectors are Plugged In, Door Closed, Estop Depressed, Fire Alarm Nominal",
+            "items": {
+                "$ref": "#/definitions/PLC1.Test_Log"
+            },
+            "maxItems": 150,
+            "minItems": 150,
+            "type": "array"
+        },
+        "PLC1.ARRAY_0..14_OF-SL_INSTRUCTIONS": {
+            "items": {
+                "$ref": "#/definitions/PLC1.SL_INSTRUCTIONS"
+            },
+            "maxItems": 15,
+            "minItems": 15,
+            "type": "array"
+        },
+        "PLC1.ARRAY_0..27_OF-Port_Map": {
+            "items": {
+                "$ref": "#/definitions/PLC1.Port_Map"
+            },
+            "maxItems": 28,
+            "minItems": 28,
+            "type": "array"
+        },
         "PLC1.ARRAY_0..29_OF-Port_Map": {
             "items": {
                 "$ref": "#/definitions/PLC1.Port_Map"
             },
             "maxItems": 30,
             "minItems": 30,
+            "type": "array"
+        },
+        "PLC1.ARRAY_0..2_OF-HMI_Instructions": {
+            "items": {
+                "$ref": "#/definitions/PLC1.HMI_Instructions"
+            },
+            "maxItems": 3,
+            "minItems": 3,
+            "type": "array"
+        },
+        "PLC1.ARRAY_0..4_OF-HMI_Instructions": {
+            "items": {
+                "$ref": "#/definitions/PLC1.HMI_Instructions"
+            },
+            "maxItems": 5,
+            "minItems": 5,
+            "type": "array"
+        },
+        "PLC1.ARRAY_0..5_OF-SL_INSTRUCTIONS": {
+            "items": {
+                "$ref": "#/definitions/PLC1.SL_INSTRUCTIONS"
+            },
+            "maxItems": 6,
+            "minItems": 6,
             "type": "array"
         },
         "PLC1.ARRAY_0..69_OF-Test_Log": {
@@ -65,6 +114,32 @@
             },
             "maxItems": 70,
             "minItems": 70,
+            "type": "array"
+        },
+        "PLC1.ARRAY_0..6_OF-HMI_Instructions": {
+            "items": {
+                "$ref": "#/definitions/PLC1.HMI_Instructions"
+            },
+            "maxItems": 7,
+            "minItems": 7,
+            "type": "array"
+        },
+        "PLC1.ARRAY_0..7_OF-HMI_Instructions": {
+            "comment": "HMI_HOME_INSTRUCTIONS : ARRAY[0..1] OF HMI_INSTRUCTIONS := [\r\n\t];",
+            "items": {
+                "$ref": "#/definitions/PLC1.HMI_Instructions"
+            },
+            "maxItems": 8,
+            "minItems": 8,
+            "type": "array"
+        },
+        "PLC1.ARRAY_0..8_OF-HMI_Instructions": {
+            "comment": "HMI_HOME_INSTRUCTIONS : ARRAY[0..1] OF HMI_INSTRUCTIONS := [\r\n\t];",
+            "items": {
+                "$ref": "#/definitions/PLC1.HMI_Instructions"
+            },
+            "maxItems": 9,
+            "minItems": 9,
             "type": "array"
         },
         "PLC1.Datastructure1": {
@@ -80,6 +155,24 @@
                     ]
                 },
                 "Result": {
+                    "$ref": "tchmi:general#/definitions/BOOL"
+                }
+            },
+            "type": "object"
+        },
+        "PLC1.HMI_Instructions": {
+            "properties": {
+                "Instructions": {
+                    "allOf": [
+                        {
+                            "maxLength": 200
+                        },
+                        {
+                            "$ref": "tchmi:general#/definitions/String"
+                        }
+                    ]
+                },
+                "Status": {
                     "$ref": "tchmi:general#/definitions/BOOL"
                 }
             },
@@ -110,6 +203,21 @@
             },
             "type": "object"
         },
+        "PLC1.SL_INSTRUCTIONS": {
+            "properties": {
+                "Line": {
+                    "allOf": [
+                        {
+                            "maxLength": 255
+                        },
+                        {
+                            "$ref": "tchmi:general#/definitions/String"
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        },
         "PLC1.Test_Log": {
             "properties": {
                 "Description": {
@@ -126,7 +234,14 @@
                     "$ref": "tchmi:general#/definitions/INT"
                 },
                 "Result": {
-                    "$ref": "tchmi:general#/definitions/BOOL"
+                    "allOf": [
+                        {
+                            "maxLength": 10
+                        },
+                        {
+                            "$ref": "tchmi:general#/definitions/String"
+                        }
+                    ]
                 }
             },
             "type": "object"
@@ -2443,13 +2558,208 @@
             },
             "USEMAPPING": true
         },
-        "PLC1.GVL_HMI.HMI_HOME_CONFIRM_CONNECTIONS": {
+        "PLC1.GVL_HMI.HMI_ABORT_TEST_BUTTON.Live_Value": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL_HMI::HMI_HOME_CONFIRM_CONNECTIONS",
+            "MAPPING": "PLC1::GVL_HMI::HMI_ABORT_TEST_BUTTON::Live_Value",
             "SCHEMA": {
                 "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_ABORT_TEST_BUTTON.Text": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_ABORT_TEST_BUTTON::Text",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 25
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_DCDC_CONFIG_INSTRUCTIONS": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_DCDC_CONFIG_INSTRUCTIONS",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY_0..5_OF-SL_INSTRUCTIONS"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_HOME_BEGIN_TEST_BUTTON.Live_Value": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_HOME_BEGIN_TEST_BUTTON::Live_Value",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_HOME_BEGIN_TEST_BUTTON.Text": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_HOME_BEGIN_TEST_BUTTON::Text",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 25
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_HOME_INSTRUCTIONS": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_HOME_INSTRUCTIONS",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY_0..7_OF-HMI_Instructions"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_PSU_CONFIG_INSTRUCTIONS": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_PSU_CONFIG_INSTRUCTIONS",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY_0..14_OF-SL_INSTRUCTIONS"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_RESET_TEST_BUTTON.Live_Value": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_RESET_TEST_BUTTON::Live_Value",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_RESET_TEST_BUTTON.Text": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_RESET_TEST_BUTTON::Text",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 25
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_SECTION_1_BEGIN_AUTOMATED_BUTTON.Live_Value": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_SECTION_1_BEGIN_AUTOMATED_BUTTON::Live_Value",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_SECTION_1_BEGIN_AUTOMATED_BUTTON.Text": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_SECTION_1_BEGIN_AUTOMATED_BUTTON::Text",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 25
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_SECTION_1_INSTRUCTIONS": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_SECTION_1_INSTRUCTIONS",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY_0..6_OF-HMI_Instructions"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_SECTION_2_BEGIN_AUTOMATED_BUTTON.Live_Value": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_SECTION_2_BEGIN_AUTOMATED_BUTTON::Live_Value",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_SECTION_2_BEGIN_AUTOMATED_BUTTON.Text": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_SECTION_2_BEGIN_AUTOMATED_BUTTON::Text",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 25
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.HMI_SECTION_2_INSTRUCTIONS": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::HMI_SECTION_2_INSTRUCTIONS",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY_0..7_OF-HMI_Instructions"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.JBOX_TEST_PORT_MAP": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_HMI::JBOX_TEST_PORT_MAP",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY_0..27_OF-Port_Map"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_LOGS.TEST_RESULTS_ARRAY": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_LOGS::TEST_RESULTS_ARRAY",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY_0..149_OF-Test_Log"
             },
             "USEMAPPING": true
         },
@@ -3302,11 +3612,24 @@
                 "PLC1.GVL.bWriteLog": 3,
                 "PLC1.GVL_HMI.ACTIVE_HMI_VIEW_STRING": 3,
                 "PLC1.GVL_HMI.HMI_ABORT_TEST": 3,
+                "PLC1.GVL_HMI.HMI_ABORT_TEST_BUTTON.Live_Value": 3,
+                "PLC1.GVL_HMI.HMI_ABORT_TEST_BUTTON.Text": 3,
+                "PLC1.GVL_HMI.HMI_DCDC1_CONFIGURATION_INSTRUCTIONS": 3,
+                "PLC1.GVL_HMI.HMI_DCDC2_CONFIGURATION_INSTRUCTIONS": 3,
+                "PLC1.GVL_HMI.HMI_DCDC_CONFIG_INSTRUCTIONS": 3,
                 "PLC1.GVL_HMI.HMI_HOME_ACTIVE": 3,
+                "PLC1.GVL_HMI.HMI_HOME_BEGIN_TEST_BUTTON.Live_Value": 3,
+                "PLC1.GVL_HMI.HMI_HOME_BEGIN_TEST_BUTTON.Text": 3,
                 "PLC1.GVL_HMI.HMI_HOME_CONFIRM_CONNECTIONS": 3,
+                "PLC1.GVL_HMI.HMI_HOME_INSTRUCTIONS": 3,
                 "PLC1.GVL_HMI.HMI_PREP_SECTION1_ACTIVE": 3,
                 "PLC1.GVL_HMI.HMI_PREP_SECTION2_ACTIVE": 3,
+                "PLC1.GVL_HMI.HMI_PSU1_CONFIGURATION_INSTRUCTIONS": 3,
+                "PLC1.GVL_HMI.HMI_PSU2_CONFIGURATION_INSTRUCTIONS": 3,
+                "PLC1.GVL_HMI.HMI_PSU_CONFIG_INSTRUCTIONS": 3,
                 "PLC1.GVL_HMI.HMI_RESET_JBOX_TEST": 3,
+                "PLC1.GVL_HMI.HMI_RESET_TEST_BUTTON.Live_Value": 3,
+                "PLC1.GVL_HMI.HMI_RESET_TEST_BUTTON.Text": 3,
                 "PLC1.GVL_HMI.HMI_SECTION1_ACTIVE": 3,
                 "PLC1.GVL_HMI.HMI_SECTION1_BEGIN_AUTOMATED": 3,
                 "PLC1.GVL_HMI.HMI_SECTION1_PREP_COMPLETED": 3,
@@ -3314,6 +3637,12 @@
                 "PLC1.GVL_HMI.HMI_SECTION2_BEGIN_AUTOMATED": 3,
                 "PLC1.GVL_HMI.HMI_SECTION2_PREP_COMPLETE": 3,
                 "PLC1.GVL_HMI.HMI_SECTION999_ACTIVE": 3,
+                "PLC1.GVL_HMI.HMI_SECTION_1_BEGIN_AUTOMATED_BUTTON.Live_Value": 3,
+                "PLC1.GVL_HMI.HMI_SECTION_1_BEGIN_AUTOMATED_BUTTON.Text": 3,
+                "PLC1.GVL_HMI.HMI_SECTION_1_INSTRUCTIONS": 3,
+                "PLC1.GVL_HMI.HMI_SECTION_2_BEGIN_AUTOMATED_BUTTON.Live_Value": 3,
+                "PLC1.GVL_HMI.HMI_SECTION_2_BEGIN_AUTOMATED_BUTTON.Text": 3,
+                "PLC1.GVL_HMI.HMI_SECTION_2_INSTRUCTIONS": 3,
                 "PLC1.GVL_HMI.JBOX_TEST_PORT_MAP": 3,
                 "PLC1.GVL_IO_STRUCTS.IO_MAP_SECTION1_DIG.21.LIVE_BOOL": 3,
                 "PLC1.GVL_IO_STRUCTS.IO_MAP_SECTION1_DIG.22.LIVE_BOOL": 3,

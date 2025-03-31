@@ -79,145 +79,135 @@
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>GVL_IO.JB_1914_Us</Name>
-							<Comment><![CDATA[8.0 : BOOL; (*INDEX 1 JBOX 1914 Up Power *) // mapping is likely wrong]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.JB_1914_Up</Name>
-							<Comment><![CDATA[8.1 : BOOL; (*INDEX 2 JBOX 1914 Us Power *) // mapping is likely wrong]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.C3_P1</Name>
-							<Comment><![CDATA[4.0 : BOOL; (*INDEX 3 Fire pull Station SF4 (1008 (1) port 1) *)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.C3_P2</Name>
+							<Name>GVL_IO.J7_24V_Up</Name>
 							<Comment><![CDATA[14.1 : BOOL; (*INDEX 4 24V PWR Check J7 (4) (1008 (1) port 2) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.C3_P3</Name>
-							<Comment><![CDATA[4.2 : BOOL; (*INDEX 5 24V PWR Check J7 (5) (1008 (1) port 3) *)]]></Comment>
+							<Name>GVL_IO.JB_DCDCS_OK</Name>
+							<Comment><![CDATA[ JBOX DCDC GOOD Signal ]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.C3_P4</Name>
-							<Comment><![CDATA[14.3 : BOOL; (*INDEX 6 24V PWR Check J3 (1) (1008 (1) port 4) *)]]></Comment>
+							<Name>GVL_IO.JB_PSU1_OK</Name>
+							<Comment><![CDATA[ PSU 1 OK ]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.C3_P5</Name>
-							<Comment><![CDATA[4.4 : BOOL; (*INDEX 7 24V PWR Check J3 (2) (1008 (1) port 5) *)]]></Comment>
+							<Name>GVL_IO.JB_PSU2_OK</Name>
+							<Comment><![CDATA[ PSU 2 OK ]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.C3_P6</Name>
-							<Comment><![CDATA[4.5 : BOOL; (*INDEX 8 24V PWR Check J4 (1) (1008 (1) port 6) *)]]></Comment>
+							<Name>GVL_IO.J7_24V_Us</Name>
+							<Comment><![CDATA[4.2 : BOOL; (*INDEX 5 24V PWR Check J7 (5) (1008 (1) port 3) *)    ]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.C3_P7</Name>
-							<Comment><![CDATA[4.7 : BOOL; (*INDEX 9 24V PWR Check J4 (2) (1008 (1) port 7) *)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.C4_P1</Name>
-							<Comment><![CDATA[5.0 : BOOL; (*INDEX 10 24V PWR Check J5 (1) (1008 (2) port 1) *)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.C4_P2</Name>
-							<Comment><![CDATA[5.1 : BOOL; (*INDEX 11 24V PWR Check J5 (2) (1008 (2) port 2) *)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.C4_P3</Name>
-							<Comment><![CDATA[5.2 : BOOL; (*INDEX 12 24V PWR Check J6 (1) (1008 (2) port 3) *)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.C4_P4</Name>
-							<Comment><![CDATA[5.3 : BOOL; (*INDEX 13 24V PWR Check J6 (2) (1008 (2) port 4) *)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.C4_P5</Name>
+							<Name>GVL_IO.J8_24V_Up</Name>
 							<Comment><![CDATA[5.4 : BOOL; (*INDEX 14 24V PWR Check J8 (4) (1008 (2) port 5) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.C4_P6</Name>
+							<Name>GVL_IO.J8_24V_Us</Name>
 							<Comment><![CDATA[5.5 : BOOL; (*INDEX 15 24V PWR Check J8 (5) (1008 (2) port 6) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.C4_P7</Name>
-							<Comment><![CDATA[5.6 : BOOL; (*INDEX 16 Mine Phone Continuity SF2 (1008 (2) port 7) *)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.C4_P8</Name>
-							<Comment><![CDATA[5.7 : BOOL; (*INDEX 17 Mine Phone Continuity SF1 (1008 (2) port 8) *)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.C5_P1</Name>
-							<Comment><![CDATA[6.0 : BOOL; (*INDEX 18 MGT Continuity SF6 (1008 (3) port 1) *)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.C5_P2</Name>
-							<Comment><![CDATA[6.1: BOOL; (*INDEX 19 MGT Continuity SF8 (1008 (3) port 2) *)]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_IO.C5_P3</Name>
+							<Name>GVL_IO.J1_24V_Up</Name>
 							<Comment><![CDATA[6.2 : BOOL; (*INDEX 20 Lighting 24V Check J1 (1) (1008 (3) port 3) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.C5_P4</Name>
+							<Name>GVL_IO.J1_24V_Us</Name>
 							<Comment><![CDATA[6.3 : BOOL; (*INDEX 21 Lighting 24V Check J1 (2) (1008 (3) port 4) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.C5_P5</Name>
+							<Name>GVL_IO.J2_24V_Up</Name>
 							<Comment><![CDATA[6.4 : BOOL; (*INDEX 22 Lighting 24V Check J2 (1) (1008 (3) port 5) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.C5_P6</Name>
+							<Name>GVL_IO.J2_24V_Us</Name>
 							<Comment><![CDATA[6.5 : BOOL; (*INDEX 23 Lighting 24V Check J2 (2) (1008 (3) port 6) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.PSU1_Stat</Name>
-							<Comment><![CDATA[8.2 : BOOL; (*INDEX 24 PSU1_OK/1.4B *)]]></Comment>
+							<Name>GVL_IO.J3_24V_Up</Name>
+							<Comment><![CDATA[14.3 : BOOL; (*INDEX 6 24V PWR Check J3 (1) (1008 (1) port 4) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.PSU2_Stat</Name>
-							<Comment><![CDATA[8.3 : BOOL; (*INDEX 25 PSU2_OK/1.4E *)]]></Comment>
+							<Name>GVL_IO.J3_24V_Us</Name>
+							<Comment><![CDATA[4.4 : BOOL; (*INDEX 7 24V PWR Check J3 (2) (1008 (1) port 5) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.PSU1_I</Name>
-							<Comment><![CDATA[10.0 : BOOL; (*INDEX 26 PSU1_IOUT/1.3B *)]]></Comment>
+							<Name>GVL_IO.J4_24V_Up</Name>
+							<Comment><![CDATA[4.5 : BOOL; (*INDEX 8 24V PWR Check J4 (1) (1008 (1) port 6) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_IO.PSU2_I</Name>
-							<Comment><![CDATA[10.1 : BOOL; (*INDEX 27 PSU2_IOUT/1.3E *)]]></Comment>
+							<Name>GVL_IO.J4_24V_Us</Name>
+							<Comment><![CDATA[4.7 : BOOL; (*INDEX 9 24V PWR Check J4 (2) (1008 (1) port 7) *)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.J5_24V_Up</Name>
+							<Comment><![CDATA[5.0 : BOOL; (*INDEX 10 24V PWR Check J5 (1) (1008 (2) port 1) *)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.J5_24V_Us</Name>
+							<Comment><![CDATA[5.1 : BOOL; (*INDEX 11 24V PWR Check J5 (2) (1008 (2) port 2) *)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.J6_24V_Up</Name>
+							<Comment><![CDATA[5.2 : BOOL; (*INDEX 12 24V PWR Check J6 (1) (1008 (2) port 3) *)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.J6_24V_Us</Name>
+							<Comment><![CDATA[5.3 : BOOL; (*INDEX 13 24V PWR Check J6 (2) (1008 (2) port 4) *)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.SF1_MF_CONTINUITY</Name>
+							<Comment><![CDATA[5.7 : BOOL; (*INDEX 17 Mine Phone Continuity SF1 (1008 (2) port 8) *)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.SF2_MF_CONTINUITY</Name>
+							<Comment><![CDATA[5.6 : BOOL; (*INDEX 16 Mine Phone Continuity SF2 (1008 (2) port 7) *)	]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.SF4_Pull_Station</Name>
+							<Comment><![CDATA[4.0 : BOOL; (*INDEX 3 Fire pull Station SF4 (1008 (1) port 1) *)	]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.SF6_MGT_CONTINUITY</Name>
+							<Comment><![CDATA[6.0 : BOOL; (*INDEX 18 MGT Continuity SF6 (1008 (3) port 1) *)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.SF8_MGT_CONTINUITY</Name>
+							<Comment><![CDATA[6.1: BOOL; (*INDEX 19 MGT Continuity SF8 (1008 (3) port 2) *)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_IO.JB_Door_Switch</Name>
+							<Comment><![CDATA[ Door Switch ]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>GVL_IO.C2_P2</Name>
+							<Name>GVL_IO.SF5_Fire_Alarm</Name>
 							<Comment><![CDATA[3.1 : BOOL; (*INDEX 0 Fire Alarm Sound SF5 (2024 port 2) *)]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -304,10 +294,10 @@
 							<Entry Name="FSOE__FSoE Slave CMD" Index="#x6000" Sub="#x01">
 								<Type>USINT</Type>
 							</Entry>
-							<Entry Name="FSOE__InputChannel1" Index="#x6001" Sub="#x01" Flags="#x00008020">
+							<Entry Name="FSOE__InputChannel1" Index="#x6001" Sub="#x01">
 								<Type>BIT</Type>
 							</Entry>
-							<Entry Name="FSOE__InputChannel2" Index="#x6001" Sub="#x02" Flags="#x00008020">
+							<Entry Name="FSOE__InputChannel2" Index="#x6001" Sub="#x02">
 								<Type>BIT</Type>
 							</Entry>
 							<Entry Name="FSOE__">
@@ -499,10 +489,10 @@
 								</Entry>
 							</Pdo>
 							<Pdo Name="DIG Outputs" Index="#x1600" InOut="1" Flags="#x0010" SyncMan="2">
-								<Entry Name="Channel 1__Output" Index="#x7000" Sub="#x01" Flags="#x00008020">
+								<Entry Name="Channel 1__Output" Index="#x7000" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Channel 2__Output" Index="#x7010" Sub="#x01" Flags="#x00008020">
+								<Entry Name="Channel 2__Output" Index="#x7010" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="Channel 3__Output" Index="#x7020" Sub="#x01">
@@ -518,7 +508,7 @@
 							<CoeProfile ProfileNo="18355081"/>
 						</EtherCAT>
 					</Box>
-					<Box Id="4" BoxType="9099">
+					<Box Id="17" BoxType="9099">
 						<Name>C3 (EL1018)</Name>
 						<ImageId>7</ImageId>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03fa3052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1018 8Ch. Dig. Input 24V, 10µs" Desc="EL1018" PortABoxInfo="#x01000003">
@@ -567,10 +557,10 @@
 						</EtherCAT>
 					</Box>
 					<Box Id="5" BoxType="9099">
-						<Name>C4 (EL1018)</Name>
+						<Name>C4 (EL1819)</Name>
 						<ImageId>7</ImageId>
-						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03fa3052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1018 8Ch. Dig. Input 24V, 10µs" Desc="EL1018" PortABoxInfo="#x01000004">
-							<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
+						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x071b3052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1819 16Ch. Dig. Input 24V, 10µs" Desc="EL1819" PortABoxInfo="#x01000011">
+							<SyncMan>001002000000010004000000000000000200001000010000</SyncMan>
 							<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
 								<Entry Name="Input" Index="#x6000" Sub="#x01">
@@ -609,16 +599,56 @@
 							</Pdo>
 							<Pdo Name="Channel 8" Index="#x1a07" Flags="#x0011" SyncMan="0">
 								<Entry Name="Input" Index="#x6070" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 9" Index="#x1a08" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6080" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 10" Index="#x1a09" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6090" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 11" Index="#x1a0a" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60a0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 12" Index="#x1a0b" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60b0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 13" Index="#x1a0c" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60c0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 14" Index="#x1a0d" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60d0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 15" Index="#x1a0e" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60e0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 16" Index="#x1a0f" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60f0" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 						</EtherCAT>
 					</Box>
 					<Box Id="6" BoxType="9099">
-						<Name>C5 (EL1008)</Name>
+						<Name>C5 (EL1819)</Name>
 						<ImageId>7</ImageId>
-						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03f03052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1008 8Ch. Dig. Input 24V, 3ms" Desc="EL1008" PortABoxInfo="#x01000005">
-							<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
+						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x071b3052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1819 16Ch. Dig. Input 24V, 10µs" Desc="EL1819" PortABoxInfo="#x01000005">
+							<SyncMan>001002000000010004000000000000000200001000010000</SyncMan>
 							<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
 								<Entry Name="Input" Index="#x6000" Sub="#x01">
@@ -657,6 +687,46 @@
 							</Pdo>
 							<Pdo Name="Channel 8" Index="#x1a07" Flags="#x0011" SyncMan="0">
 								<Entry Name="Input" Index="#x6070" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 9" Index="#x1a08" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6080" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 10" Index="#x1a09" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6090" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 11" Index="#x1a0a" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60a0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 12" Index="#x1a0b" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60b0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 13" Index="#x1a0c" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60c0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 14" Index="#x1a0d" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60d0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 15" Index="#x1a0e" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60e0" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 16" Index="#x1a0f" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x60f0" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
@@ -679,42 +749,42 @@
 								<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
 								<BootStrapData>0010f400f410f400</BootStrapData>
 								<Pdo Name="Inputs" Index="#x1a00" Flags="#x0091" SyncMan="3">
-									<Entry Name="FSOE__FSoE Slave CMD" Index="#x6000" Sub="#x01">
+									<Entry Name="FSOE__FSoE Slave CMD" Index="#x6000" Sub="#x01" Flags="#x00008020">
 										<Type>USINT</Type>
 									</Entry>
-									<Entry Name="FSOE__InputChannel1" Index="#x6001" Sub="#x01">
+									<Entry Name="FSOE__InputChannel1" Index="#x6001" Sub="#x01" Flags="#x00008020">
 										<Type>BIT</Type>
 									</Entry>
-									<Entry Name="FSOE__InputChannel2" Index="#x6001" Sub="#x02">
+									<Entry Name="FSOE__InputChannel2" Index="#x6001" Sub="#x02" Flags="#x00008020">
 										<Type>BIT</Type>
 									</Entry>
 									<Entry Name="FSOE__">
 										<Type GUID="{18071995-0000-0000-0000-002000000006}">ARRAY [0..5] OF BIT</Type>
 									</Entry>
-									<Entry Name="FSOE__FSoE Slave CRC_0" Index="#x6000" Sub="#x02">
+									<Entry Name="FSOE__FSoE Slave CRC_0" Index="#x6000" Sub="#x02" Flags="#x00008020">
 										<Type>UINT</Type>
 									</Entry>
-									<Entry Name="FSOE__FSoE Slave ConnID" Index="#x6000" Sub="#x03">
+									<Entry Name="FSOE__FSoE Slave ConnID" Index="#x6000" Sub="#x03" Flags="#x00008020">
 										<Type>UINT</Type>
 									</Entry>
 								</Pdo>
 								<Pdo Name="Outputs" Index="#x1600" InOut="1" Flags="#x0091" SyncMan="2">
-									<Entry Name="FSOE__FSoE Master CMD" Index="#x7000" Sub="#x01">
+									<Entry Name="FSOE__FSoE Master CMD" Index="#x7000" Sub="#x01" Flags="#x00008020">
 										<Type>USINT</Type>
 									</Entry>
-									<Entry Name="FSOE__OutputChannel1" Index="#x7001" Sub="#x01">
+									<Entry Name="FSOE__OutputChannel1" Index="#x7001" Sub="#x01" Flags="#x00008020">
 										<Type>BIT</Type>
 									</Entry>
-									<Entry Name="FSOE__OutputChannel2" Index="#x7001" Sub="#x02">
+									<Entry Name="FSOE__OutputChannel2" Index="#x7001" Sub="#x02" Flags="#x00008020">
 										<Type>BIT</Type>
 									</Entry>
 									<Entry Name="FSOE__">
 										<Type GUID="{18071995-0000-0000-0000-002000000006}">ARRAY [0..5] OF BIT</Type>
 									</Entry>
-									<Entry Name="FSOE__FSoE Master CRC_0" Index="#x7000" Sub="#x02">
+									<Entry Name="FSOE__FSoE Master CRC_0" Index="#x7000" Sub="#x02" Flags="#x00008020">
 										<Type>UINT</Type>
 									</Entry>
-									<Entry Name="FSOE__FSoE Master ConnID" Index="#x7000" Sub="#x03">
+									<Entry Name="FSOE__FSoE Master ConnID" Index="#x7000" Sub="#x03" Flags="#x00008020">
 										<Type>UINT</Type>
 									</Entry>
 								</Pdo>
@@ -1202,32 +1272,41 @@
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Untitled1^Untitled1 Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C2 (EL2014)">
+				<Link VarA="PlcTask Outputs^GVL_IO.SF5_Fire_Alarm" VarB="DIG Outputs^Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C3 (EL1018)">
-				<Link VarA="PlcTask Inputs^GVL_IO.C3_P1" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C3_P2" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C3_P3" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C3_P4" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C3_P5" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C3_P6" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C3_P7" VarB="Channel 7^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J7_24V_Up" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J7_24V_Us" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J8_24V_Up" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J8_24V_Us" VarB="Channel 4^Input" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C4 (EL1018)">
-				<Link VarA="PlcTask Inputs^GVL_IO.C4_P1" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C4_P2" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C4_P3" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C4_P4" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C4_P5" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C4_P6" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C4_P7" VarB="Channel 7^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C4_P8" VarB="Channel 8^Input"/>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C4 (EL1819)">
+				<Link VarA="PlcTask Inputs^GVL_IO.J1_24V_Up" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J1_24V_Us" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J2_24V_Up" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J2_24V_Us" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J3_24V_Up" VarB="Channel 5^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J3_24V_Us" VarB="Channel 6^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J4_24V_Up" VarB="Channel 7^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J4_24V_Us" VarB="Channel 8^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J5_24V_Up" VarB="Channel 9^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J5_24V_Us" VarB="Channel 10^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J6_24V_Up" VarB="Channel 11^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.J6_24V_Us" VarB="Channel 12^Input" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C5 (EL1008)">
-				<Link VarA="PlcTask Inputs^GVL_IO.C5_P1" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C5_P2" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C5_P3" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C5_P4" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C5_P5" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^GVL_IO.C5_P6" VarB="Channel 6^Input"/>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C5 (EL1819)">
+				<Link VarA="PlcTask Inputs^GVL_IO.SF1_MF_CONTINUITY" VarB="Channel 16^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.SF2_MF_CONTINUITY" VarB="Channel 15^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.SF4_Pull_Station" VarB="Channel 14^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.SF6_MGT_CONTINUITY" VarB="Channel 13^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.SF8_MGT_CONTINUITY" VarB="Channel 12^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^C0 (EK1914)^C6 (EK1122-0008)^JBC0 (EK1914)">
+				<Link VarA="PlcTask Inputs^GVL_IO.JB_DCDCS_OK" VarB="Module 2 (DIO)^DIO Inputs^Input 0" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.JB_Door_Switch" VarB="Module 2 (DIO)^DIO Inputs^Input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.JB_PSU1_OK" VarB="Module 2 (DIO)^DIO Inputs^Input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IO.JB_PSU2_OK" VarB="Module 2 (DIO)^DIO Inputs^Input 3" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

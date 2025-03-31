@@ -5,20 +5,17 @@
 VAR_GLOBAL
 	
 	
+	// STILL NEED ESTOP VERIFICATION, PSU VERIFICATION, DCDC VERIFICATION
 
 	// SECTION ONE OCCURS WITH DOOR CLOSED AND ESTOP DEPRESSED AND NOTHING CONFIGURED
-	// NEED TO GET DOOR SWITCH AND ESTOP STUFF IN HERE AT LEAST
 	IO_MAP_SECTION1_DIG : ARRAY[0..CONSTANTS.SECTION1_NUM_DIG_TESTS-1] OF IO_STRUCT := [
 		(
 			SECTION := 1,
 			INDEX := 0,
-			CARD := 'C3',
-			TERMINAL :=  1,
-			SCH_LBL := 'SF4',
+			SCH_LBL := 'J7_4',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'SF2',
-			TARGET_PORT := 'S2',
-			DESCRIPTION := 'Fire Pull Station', // This is written to HMI
+			TESTER_PORT := 'J7',
+			DESCRIPTION := '480V Supplied 7/8 S29 Up 24V Power Check', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -26,13 +23,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 1,
-			CARD := 'C3',
-			TERMINAL :=  2,
-			SCH_LBL := 'J7_4',
+			SCH_LBL := 'J7_5',
 			SIGNAL := 'Digital',
 			TESTER_PORT := 'J7',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			DESCRIPTION := '480V Supplied 7/8 S29 Us 24V Power Check', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -40,13 +34,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 2,
-			CARD := 'C3',
-			TERMINAL :=  3,
-			SCH_LBL := 'J7_5',
+			SCH_LBL := 'J8_4',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J7',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			TESTER_PORT := 'J8',
+			DESCRIPTION := '480V Supplied 7/8 S30 Up 24V Power Check', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -54,13 +45,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 3,
-			CARD := 'C3',
-			TERMINAL :=  4,
-			SCH_LBL := 'J3_1',
+			SCH_LBL := 'J8_5',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J3',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			TESTER_PORT := 'J8',
+			DESCRIPTION := '480V Supplied 7/8 S30 Us 24V Power Check', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -68,13 +56,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 4,
-			CARD := 'C3',
-			TERMINAL :=  5,
-			SCH_LBL := 'J3_2',
+			SCH_LBL := 'J1_1',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J3',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			TESTER_PORT := 'J1',
+			DESCRIPTION := '480V Supplied 24V Lighting Up S33', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -82,13 +67,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 5,
-			CARD := 'C3',
-			TERMINAL :=  6,
-			SCH_LBL := 'J4_1',
+			SCH_LBL := 'J1_2',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J4',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			TESTER_PORT := 'J1',
+			DESCRIPTION := '480V Supplied 24V Lighting Up S33', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -96,13 +78,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 6,
-			CARD := 'C3',
-			TERMINAL :=  7,
-			SCH_LBL := 'J4_2',
+			SCH_LBL := 'J2_1',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J4',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			TESTER_PORT := 'J2',
+			DESCRIPTION := '480V Supplied 24V Lighting Up S34', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -110,13 +89,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 7,
-			CARD := 'C4',
-			TERMINAL :=  1,
-			SCH_LBL := 'J5_1',
+			SCH_LBL := 'J2_2',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J5',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			TESTER_PORT := 'J2',
+			DESCRIPTION := '480V Supplied 24V Lighting Us S34', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -124,13 +100,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 8,
-			CARD := 'C4',
-			TERMINAL :=  2,
-			SCH_LBL := 'J5_2',
+			SCH_LBL := 'J3_1',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J5',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			TESTER_PORT := 'J3',
+			DESCRIPTION := '480V Supplied 24V Lighting Up S25', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -138,13 +111,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 9,
-			CARD := 'C4',
-			TERMINAL :=  3,
-			SCH_LBL := 'J6_1',
+			SCH_LBL := 'J3_2',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J6',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			TESTER_PORT := 'J3',
+			DESCRIPTION := '480V Supplied 24V Lighting Us S25', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -152,13 +122,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 10,
-			CARD := 'C4',
-			TERMINAL :=  4,
-			SCH_LBL := 'J6_2',
+			SCH_LBL := 'J4_1',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J6',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			TESTER_PORT := 'J4',
+			DESCRIPTION := '480V Supplied 24V Lighting Up S26', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -166,13 +133,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 11,
-			CARD := 'C4',
-			TERMINAL :=  5,
-			SCH_LBL := 'J8_4',
+			SCH_LBL := 'J4_2',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J8',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			TESTER_PORT := 'J4',
+			DESCRIPTION := '480V Supplied 24V Lighting Us S26', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -180,13 +144,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 12,
-			CARD := 'C4',
-			TERMINAL :=  6,
-			SCH_LBL := 'J8_5',
+			SCH_LBL := 'J5_1',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J8',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Power Check', // This is written to HMI
+			TESTER_PORT := 'J5',
+			DESCRIPTION := '480V Supplied 24V Lighting Up S27', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -194,13 +155,10 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 13,
-			CARD := 'C4',
-			TERMINAL :=  7,
-			SCH_LBL := 'SF2',
+			SCH_LBL := 'J5_2',
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'SF2',
-			TARGET_PORT := 'S2',
-			DESCRIPTION := 'Mine Phone Continuity SF2', // This is written to HMI
+			TESTER_PORT := 'J5',
+			DESCRIPTION := '480V Supplied 24V Lighting Us S27', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -208,8 +166,28 @@ VAR_GLOBAL
 		(
 			SECTION := 1,
 			INDEX := 14,
-			CARD := 'C4',
-			TERMINAL :=  8,
+			SCH_LBL := 'J6_1',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J6',
+			DESCRIPTION := '480V Supplied 24V Lighting Up S28', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 15,
+			SCH_LBL := 'J6_2',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J6',
+			DESCRIPTION := '480V Supplied 24V Lighting Us S28', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 16,
 			SCH_LBL := 'SF1',
 			SIGNAL := 'Digital',
 			TESTER_PORT := 'SF2',
@@ -221,9 +199,31 @@ VAR_GLOBAL
 		),
 		(
 			SECTION := 1,
-			INDEX := 15,
-			CARD := 'C5',
-			TERMINAL :=  1,
+			INDEX := 17,
+			SCH_LBL := 'SF2',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'SF2',
+			TARGET_PORT := 'S2',
+			DESCRIPTION := 'Mine Phone Continuity SF2', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 18,
+			SCH_LBL := 'SF4',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'SF2',
+			TARGET_PORT := 'S2',
+			DESCRIPTION := 'Fire Pull Station Not Pulled Signal', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 19,
 			SCH_LBL := 'SF6',
 			SIGNAL := 'Digital',
 			TESTER_PORT := 'SF2',
@@ -235,9 +235,7 @@ VAR_GLOBAL
 		),
 		(
 			SECTION := 1,
-			INDEX := 16,
-			CARD := 'C5',
-			TERMINAL :=  2,
+			INDEX := 20,
 			SCH_LBL := 'SF8',
 			SIGNAL := 'Digital',
 			TESTER_PORT := 'SF2',
@@ -249,77 +247,67 @@ VAR_GLOBAL
 		),
 		(
 			SECTION := 1,
-			INDEX := 17,
-			CARD := 'C5',
-			TERMINAL :=  3,
-			SCH_LBL := 'J1_1',
+			INDEX := 21,
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J1',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Lighting Check', // This is written to HMI
+			DESCRIPTION := 'JBOX Door Closed Switch', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
 		),
 		(
 			SECTION := 1,
-			INDEX := 18,
-			CARD := 'C5',
-			TERMINAL :=  4,
-			SCH_LBL := 'J1_2',
+			INDEX := 22,
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J1',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Lighting Check', // This is written to HMI
+			DESCRIPTION := 'JBOX DCDCs_OK', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
 		),
 		(
 			SECTION := 1,
-			INDEX := 19,
-			CARD := 'C5',
-			TERMINAL :=  5,
-			SCH_LBL := 'J2_1',
+			INDEX := 23,
 			SIGNAL := 'Digital',
-			TESTER_PORT := 'J2',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Lighting Check', // This is written to HMI
-			LIVE_BOOL := 0, // This is written to from the IO variable
-			EXPECTED_BOOL := 1,
-			RESULT := 'FAIL' // This is written from HMI
-		),
-		(
-			SECTION := 1,
-			INDEX := 20,
-			CARD := 'C5',
-			TERMINAL :=  6,
-			SCH_LBL := 'J2_2',
-			SIGNAL := 'Digital',
-			TESTER_PORT := 'J2',
-			TARGET_PORT := '',
-			DESCRIPTION := '24V Lighting Check', // This is written to HMI
+			DESCRIPTION := 'JBOX PSU1_OK', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
 		)
+		
 	];
 	
 	IO_MAP_SECTION1_HMI : ARRAY[0..CONSTANTS.SECTION1_NUM_HMI_TESTS-1] OF IO_STRUCT := [
 		(
 			SECTION := 1,
-			INDEX := 0,
-			CARD := '',
-			// TERMINAL := NULL,
-			SCH_LBL := '',
 			SIGNAL := 'HMI',
 			TESTER_PORT := 'J2',
-			TARGET_PORT := '',
 			DESCRIPTION := 'JBOX 480V Test', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
 		),
+		(
+			SECTION := 1,
+			DESCRIPTION := 'Performed PSU1 Configuration', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			DESCRIPTION := 'Performed DCDC1 Configuration', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			DESCRIPTION := 'Performed DCDC2 Configuration', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		)
+		
+		(*
 		(
 			SECTION := 1,
 			INDEX := 1,
@@ -334,11 +322,12 @@ VAR_GLOBAL
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
 		)
+		*)
 	];
 	
 
 	// SECTION TWO OCCURS WITH DOOR OPEN, ESTOP PRESSED, AND PULL STATION PULLED
-	// NEED TO GET DOOR SWITCH AND ESTOP STUFF IN HERE
+	// Need to get Estop Stuff In Here
 	IO_MAP_SECTION2_DIG : ARRAY[0..CONSTANTS.SECTION2_NUM_DIG_TESTS-1] OF IO_STRUCT := [
 		(
 			SECTION := 2,
@@ -349,7 +338,238 @@ VAR_GLOBAL
 			SIGNAL := 'Digital',
 			TESTER_PORT := 'SF2',
 			TARGET_PORT := 'S2',
-			DESCRIPTION := 'Fire Pull Station', // This is written to HMI
+			DESCRIPTION := 'Fire Pull Station Pulled Verification', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 0,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 2,
+			INDEX := 1,
+			CARD := 'JBC0',
+			TERMINAL :=  10,
+			SCH_LBL := '',
+			SIGNAL := 'Digital',
+			TESTER_PORT := '',
+			TARGET_PORT := '',
+			DESCRIPTION := 'Door Switch Open Verification', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 0,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 2,
+			SIGNAL := 'Digital',
+			DESCRIPTION := 'JBOX PSU2_OK', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 3,
+			SCH_LBL := 'J7_4',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J7',
+			DESCRIPTION := '120V Supplied 7/8 S29 Up 24V Power Check', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 4,
+			SCH_LBL := 'J7_5',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J7',
+			DESCRIPTION := '120V Supplied 7/8 S29 Us 24V Power Check', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 5,
+			SCH_LBL := 'J8_4',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J8',
+			DESCRIPTION := '120V Supplied 7/8 S30 Up 24V Power Check', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 6,
+			SCH_LBL := 'J8_5',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J8',
+			DESCRIPTION := '120V Supplied 7/8 S30 Us 24V Power Check', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 7,
+			SCH_LBL := 'J1_1',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J1',
+			DESCRIPTION := '120V Supplied 24V Lighting Up S33', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 8,
+			SCH_LBL := 'J1_2',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J1',
+			DESCRIPTION := '120V Supplied 24V Lighting Up S33', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 9,
+			SCH_LBL := 'J2_1',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J2',
+			DESCRIPTION := '120V Supplied 24V Lighting Up S34', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 10,
+			SCH_LBL := 'J2_2',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J2',
+			DESCRIPTION := '120V Supplied 24V Lighting Us S34', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 11,
+			SCH_LBL := 'J3_1',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J3',
+			DESCRIPTION := '120V Supplied 24V Lighting Up S25', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 12,
+			SCH_LBL := 'J3_2',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J3',
+			DESCRIPTION := '120V Supplied 24V Lighting Us S25', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 13,
+			SCH_LBL := 'J4_1',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J4',
+			DESCRIPTION := '120V Supplied 24V Lighting Up S26', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 14,
+			SCH_LBL := 'J4_2',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J4',
+			DESCRIPTION := '120V Supplied 24V Lighting Us S26', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 15,
+			SCH_LBL := 'J5_1',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J5',
+			DESCRIPTION := '120V Supplied 24V Lighting Up S27', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 16,
+			SCH_LBL := 'J5_2',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J5',
+			DESCRIPTION := '120V Supplied 24V Lighting Us S27', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 17,
+			SCH_LBL := 'J6_1',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J6',
+			DESCRIPTION := '120V Supplied 24V Lighting Up S28', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 18,
+			SCH_LBL := 'J6_2',
+			SIGNAL := 'Digital',
+			TESTER_PORT := 'J6',
+			DESCRIPTION := '120V Supplied 24V Lighting Us S28', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		)
+		];
+		
+	
+
+	IO_MAP_SECTION2_HMI : ARRAY[0..CONSTANTS.SECTION2_NUM_HMI_TESTS-1] OF IO_STRUCT := [
+		(
+			SECTION := 1,
+			INDEX := 0,
+			SIGNAL := 'HMI',
+			DESCRIPTION := 'Performed PSU2 Configuration', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 1,
+			SIGNAL := 'HMI',
+			DESCRIPTION := '120V Grace Port Lit Up', // This is written to HMI
+			LIVE_BOOL := 0, // This is written to from the IO variable
+			EXPECTED_BOOL := 1,
+			RESULT := 'FAIL' // This is written from HMI
+		),
+		(
+			SECTION := 1,
+			INDEX := 2,
+			SIGNAL := 'HMI',
+			DESCRIPTION := '120V Grace outlet verification grace lit up', // This is written to HMI
 			LIVE_BOOL := 0, // This is written to from the IO variable
 			EXPECTED_BOOL := 1,
 			RESULT := 'FAIL' // This is written from HMI
@@ -358,102 +578,6 @@ VAR_GLOBAL
 
 END_VAR
 		
-(*
-	IO_MAP : ARRAY[0..GVL.NUM_TESTS-1] OF IO_Struct := [
-		(
-			INDEX := 0,
-			CARD := 'C2',
-			TERMINAL := 2,
-			SCH_LBL := 'SF5',
-			SIGNAL := 'Digital',
-			TESTER_PORT := 'SF2',
-			TARGET_PORT := 'S2',
-			DESCRIPTION := 'Fire Alarm Sounds', // This is written to HMI
-			LIVE_BOOL := 0, // This is written to from the IO variable
-			LIVE_INT := 0, // This is written to from the IO variable
-			RESULT := FALSE // This is written from HMI
-		),
-		(
-			INDEX := 1,
-			CARD := 'JBC0',
-			TERMINAL := ,
-			SCH_LBL := ,
-			SIGNAL := 'Digital',
-			TESTER_PORT := '',
-			TARGET_PORT := '',
-			DESCRIPTION := 'JBOX EBUS Us Power Good', // This is written to HMI
-			LIVE_BOOL := 0, // This is written to from the IO variable
-			LIVE_INT := 0, // This is written to from the IO variable
-			RESULT := FALSE // This is written from HMI
-		),
-		(
-			INDEX := 2,
-			CARD := 'JBC0',
-			TERMINAL := ,
-			SCH_LBL := ,
-			SIGNAL := 'Digital',
-			TESTER_PORT := '',
-			TARGET_PORT := '',
-			DESCRIPTION := 'JBOX EBUS Up Power Good', // This is written to HMI
-			LIVE_BOOL := 0, // This is written to from the IO variable
-			LIVE_INT := 0, // This is written to from the IO variable
-			RESULT := FALSE // This is written from HMI
-		),
-		(
-			INDEX := 24,
-			CARD := 'JBC0',
-			TERMINAL :=  3,
-			SCH_LBL := '',
-			SIGNAL := '',
-			TESTER_PORT := '',
-			TARGET_PORT := '',
-			DESCRIPTION := 'PSU1_OK/1.4B', // This is written to HMI
-			LIVE_BOOL := 0, // This is written to from the IO variable
-			LIVE_INT := 0, // This is written to from the IO variable
-			RESULT := FALSE // This is written from HMI
-		),
-		(
-			INDEX := 25,
-			CARD := 'JBC0',
-			TERMINAL :=  11,
-			SCH_LBL := '',
-			SIGNAL := '',
-			TESTER_PORT := '',
-			TARGET_PORT := '',
-			DESCRIPTION := 'PSU2_OK/1.4E', // This is written to HMI
-			LIVE_BOOL := 0, // This is written to from the IO variable
-			LIVE_INT := 0, // This is written to from the IO variable
-			RESULT := FALSE // This is written from HMI
-		),
-		(
-			INDEX := 26,
-			CARD := 'JBC3',
-			TERMINAL :=  13,
-			SCH_LBL := '',
-			SIGNAL := '',
-			TESTER_PORT := '',
-			TARGET_PORT := '',
-			DESCRIPTION := 'PSU1_IOUT/1.3B', // This is written to HMI
-			LIVE_BOOL := 0, // This is written to from the IO variable
-			LIVE_INT := 0, // This is written to from the IO variable
-			RESULT := FALSE // This is written from HMI
-		),
-		(
-			INDEX := 27,
-			CARD := 'JBC3',
-			TERMINAL :=  14,
-			SCH_LBL := '',
-			SIGNAL := '',
-			TESTER_PORT := '',
-			TARGET_PORT := '',
-			DESCRIPTION := 'PSU2_IOUT/1.3E', // This is written to HMI
-			LIVE_BOOL := 0, // This is written to from the IO variable
-			LIVE_INT := 0, // This is written to from the IO variable
-			RESULT := FALSE // This is written from HMI
-		)
-		];
-
-END_VAR
-*)]]></Declaration>
+]]></Declaration>
   </GVL>
 </TcPlcObject>
